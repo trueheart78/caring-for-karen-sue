@@ -1,5 +1,8 @@
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap-sprockets
+//= require jquery.dropotron.min
+//= require jquery.scrollgress.min
 //= require turbolinks
-//= require_tree .
+//= require skel.min
+//= require util
+//= require main
