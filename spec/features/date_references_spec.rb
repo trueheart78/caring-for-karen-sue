@@ -8,6 +8,8 @@ RSpec.feature 'Dates', type: :feature do
 
   scenario 'On the homepage banner' do
     visit '/'
-    expect(page.text).to include('7th')
+    banner = page.find '#banner'
+    expect(banner).to be_visible
+    expect(banner.text).to include('7th')
   end
 end
