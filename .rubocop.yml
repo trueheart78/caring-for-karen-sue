@@ -10,6 +10,7 @@ RSpec/DescribeClass:
   Exclude:
     - 'spec/features/*'
     - 'spec/views/**/*'
+    - 'spec/lint/rubocop_spec\.rb'
 
 AllCops:
   Exclude:
