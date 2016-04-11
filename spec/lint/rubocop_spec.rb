@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-describe 'Rubocop analysis' do
+describe 'Rubocop Analysis' do
   let(:report) { `rubocop` }
 
-  it 'has no offenses' do
+  it 'Has no offenses' do
     expect(report).not_to match(/Offenses/)
   end
 end
