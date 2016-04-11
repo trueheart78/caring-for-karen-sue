@@ -1,11 +1,9 @@
 require 'spec_helper'
 
-describe 'Branch changes have correct syntax' do
-  let(:current_sha) { `git rev-parse --verify HEAD`.strip! }
-  let(:files)       { `git diff master #{current_sha} --name-only | grep .rb` }
-  let(:report)      { `bundle exec rubocop #{files.tr("\n", ' ')}` }
+describe 'Rubocop analyzes files for correct syntax' do
+  let(:report)      { `rubocop` }
 
-  it 'makes Rubocop happy' do
+  it 'has no offenses' do
     expect(report).not_to match(/Offenses/)
   end
 end
