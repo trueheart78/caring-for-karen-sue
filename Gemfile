@@ -16,6 +16,8 @@ group :development do
 end
 
 group :development, :test do
+  gem 'rubocop', '~> 0.39.0'
+  gem 'rubocop-rspec', '~> 1.4.1'
   gem 'dotenv-rails', '~> 2.1'
   gem 'sqlite3', '~> 1.3', '>= 1.3.11'
   gem 'pry', '~> 0.10.3'
