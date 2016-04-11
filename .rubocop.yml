@@ -15,6 +15,7 @@ RSpec/DescribeClass:
 AllCops:
   Exclude:
     - 'bin/*'
+    - 'bundle/**/*'
     - 'db/**/*'
     - 'config/**/*'
     - 'spec/rails_helper\.rb'
