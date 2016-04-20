@@ -5,5 +5,5 @@ machine:
 # Customize test commands
 test:
   post:
-   - case $CIRCLE_NODE_INDEX in 0) ./script/brakeman ;; esac;
+   - case $CIRCLE_NODE_INDEX in 0) ./script/brakeman ;; esac:
        parallel: true
