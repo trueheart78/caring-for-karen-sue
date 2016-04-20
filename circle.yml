@@ -1,3 +1,9 @@
 machine:
   timezone:
     America/New_York
+
+# Customize test commands
+test:
+  post:
+   - case $CIRCLE_NODE_INDEX in 0) ./script/brakeman ;; esac;
+       parallel: true
