@@ -15,7 +15,7 @@ vim .env.local
 
 ## Running Specs
 
-RSpec files exist in `spec`:
+RSpec files exist in `spec/`
 
 ```sh
 bundle exec rake spec
