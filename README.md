@@ -12,3 +12,11 @@ The stock `.env` file includes the basics. You should create local `.env.local` 
 cp .env .env.local
 vim .env.local
 ```
+
+## Running Specs
+
+RSpec files exist in `spec`:
+
+```sh
+bundle exec rake spec
+```
