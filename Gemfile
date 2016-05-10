@@ -30,5 +30,6 @@ group :development, :test do
 end
 
 group :production do
+  gem 'puma', '~> 3.4.0'
   gem 'pg', '~> 0.18.4'
 end
