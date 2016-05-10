@@ -12,7 +12,6 @@ gem 'font-awesome-rails', '~> 4.5'
 gem 'html5shiv-rails', '~> 0.0.2'
 gem 'respond-js-rails', '~> 1.4.2'
 gem 'pie-rails', '~>1.1'
-
 group :development do
   gem 'web-console', '~> 2.0'
 end
@@ -30,7 +29,7 @@ group :development, :test do
 end
 
 group :production do
-  gem 'puma', '~> 3.4.0'
   gem 'pg', '~> 0.18.4'
   gem 'rails_12factor', '~> 0.0.3'
+  gem 'puma', '~> 3.4.0'
 end
