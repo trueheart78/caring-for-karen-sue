@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+ruby '2.3.1' # make sure to update the .ruby-version file as well
+
 gem 'rails', '~> 4.2'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
