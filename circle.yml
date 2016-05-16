@@ -11,5 +11,5 @@ test:
 deployment:
   staging:
     branch: master
-      heroku:
-        appname: test-caringforkarensue
+    heroku:
+      appname: test-caringforkarensue
