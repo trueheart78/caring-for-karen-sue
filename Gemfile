@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.3.0' # make sure to update the .ruby-version file as well
 
-gem 'rails', '~> 4.2'
+gem 'rails', '~> 5.0'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
@@ -11,8 +11,6 @@ gem 'oj', '~> 2.12.14'
 gem 'turbolinks'
 gem 'simple_form', '~> 3.2', '>= 3.2.1'
 gem 'font-awesome-rails', '~> 4.5'
-gem 'html5shiv-rails', '~> 0.0.2'
-gem 'respond-js-rails', '~> 1.4.2'
 gem 'pie-rails', '~>1.1'
 group :development do
   gem 'web-console', '~> 2.0'
