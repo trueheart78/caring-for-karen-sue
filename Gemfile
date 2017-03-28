@@ -33,4 +33,4 @@ group :production do
   gem 'rails_12factor', '~> 0.0.3'
   gem 'puma', '~> 3.4.0'
 end
-gem 'nokogiri', '>= 1.6.8'
+gem 'nokogiri', '>= 1.7.1'
