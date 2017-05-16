@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.3.0' # make sure to update the .ruby-version file as well
 
-gem 'rails', '>= 5.0.0.1'
+gem 'rails', '~> 5.1.0'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2.0'
@@ -18,7 +18,7 @@ end
 group :development, :test do
   gem 'rubocop', '~> 0.39.0'
   gem 'rubocop-rspec', '~> 1.4.1'
-  gem 'dotenv-rails', '~> 2.1'
+  gem 'dotenv-rails', '~> 2.2'
   gem 'sqlite3', '~> 1.3', '>= 1.3.11'
   gem 'pry', '~> 0.10.3'
   gem 'spring'
