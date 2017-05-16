@@ -4,7 +4,7 @@ ruby '2.3.0' # make sure to update the .ruby-version file as well
 gem 'rails', '>= 5.0.0.1'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.1.0'
+gem 'coffee-rails', '~> 4.2.0'
 gem 'jquery-rails'
 gem 'rollbar', '~> 2.12'
 gem 'oj', '~> 2.12.14'
