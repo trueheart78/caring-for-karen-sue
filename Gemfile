@@ -9,7 +9,7 @@ gem 'jquery-rails'
 gem 'rollbar', '~> 2.12'
 gem 'oj', '~> 2.12.14'
 gem 'turbolinks'
-gem 'simple_form', '~> 3.2', '>= 3.2.1'
+gem 'simple_form', '~> 3.4.0'
 gem 'font-awesome-rails', '~> 4.5'
 gem 'pie-rails', '~>1.1'
 group :development do
