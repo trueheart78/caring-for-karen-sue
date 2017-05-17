@@ -18,3 +18,6 @@
 
 # Ignore extra environment files
 .env.*
+
+# Ignore coverage files
+/coverage
