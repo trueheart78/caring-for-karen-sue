@@ -17,7 +17,7 @@ dependencies:
 # Customize test commands
 test:
   override:
-    - yarn test
+    - yarn --version
   post:
    - case $CIRCLE_NODE_INDEX in 0) ./script/brakeman ;; esac:
        parallel: true
