@@ -1,14 +1,12 @@
 machine:
+  node:
+    version: v6.1.0
   timezone:
     America/New_York
   environment:
     PATH: "${PATH}:${HOME}/${CIRCLE_PROJECT_REPONAME}/node_modules/.bin"
 
 dependencies:
-  pre:
-    - rm -rf ~/.yarn
-    - npm install -g yarn
-    - yarn -v
   override:
     - yarn
   cache_directories:
