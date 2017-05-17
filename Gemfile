@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.3.0' # make sure to update the .ruby-version file as well
+ruby '2.3.4' # make sure to update the .ruby-version file as well
 
 gem 'rails', '~> 5.1.0'
 gem 'sass-rails', '~> 5.0'
@@ -25,6 +25,11 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.4'
   gem 'factory_girl_rails', '~> 4.5'
   gem 'capybara', '~> 2.5'
+end
+
+group :test do
+  gem 'simplecov', require: false
+  gem 'simplecov-rcov', require: false
 end
 
 group :production do
