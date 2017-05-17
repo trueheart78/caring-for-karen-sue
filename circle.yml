@@ -5,7 +5,7 @@ machine:
     PATH: "${PATH}:${HOME}/${CIRCLE_PROJECT_REPONAME}/node_modules/.bin"
 
 dependencies:
-  post:
+  pre:
     - rm -rf ~/.yarn
     - npm install -g yarn
     - yarn -v
