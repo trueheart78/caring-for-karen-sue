@@ -11,6 +11,7 @@ gem 'oj', '~> 2.12.14'
 gem 'turbolinks'
 gem 'font-awesome-rails', '~> 4.7'
 gem 'pie-rails', '~>1.1'
+gem 'webpacker', git: 'https://github.com/rails/webpacker.git'
 group :development do
   gem 'web-console', '~> 2.0'
 end

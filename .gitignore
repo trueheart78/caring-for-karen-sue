@@ -21,3 +21,6 @@
 
 # Ignore coverage files
 /coverage
+/public/packs
+/elm-stuff
+/node_modules
