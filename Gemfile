@@ -1,30 +1,32 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 # ruby '2.3.4' # make sure to update the .ruby-version file as well
 
-gem 'rails', '~> 5.1.0'
-gem 'sass-rails', '~> 5.0'
-gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2.0'
-gem 'jquery-rails'
-gem 'rollbar', '~> 2.12'
-gem 'oj' # , '~> 2.12.14'
-gem 'turbolinks'
 gem 'font-awesome-rails', '~> 4.7'
+gem 'jquery-rails'
+gem 'oj' # , '~> 2.12.14'
 gem 'pie-rails', '~>1.1'
+gem 'rails', '~> 5.1.0'
+gem 'rollbar', '~> 2.12'
+gem 'sass-rails', '~> 5.0'
+gem 'turbolinks'
+gem 'uglifier', '>= 1.3.0'
 group :development do
   gem 'web-console', '~> 2.0'
 end
 
 group :development, :test do
-  gem 'rubocop', '~> 0.39.0'
-  gem 'rubocop-rspec', '~> 1.4.1'
-  gem 'dotenv-rails', '~> 2.2'
-  gem 'sqlite3', '~> 1.3', '>= 1.3.11'
-  gem 'pry', '~> 0.10.3'
-  gem 'spring'
-  gem 'rspec-rails', '~> 3.4'
-  gem 'factory_girl_rails', '~> 4.5'
   gem 'capybara', '~> 2.5'
+  gem 'dotenv-rails', '~> 2.2'
+  gem 'factory_girl_rails', '~> 4.5'
+  gem 'pry', '~> 0.10.3'
+  gem 'rspec-rails', '~> 3.4'
+  gem 'rubocop'
+  gem 'rubocop-rspec'
+  gem 'spring'
+  gem 'sqlite3', '~> 1.3', '>= 1.3.11'
 end
 
 group :test do
