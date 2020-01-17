@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 
 # Heroku needs this. Update .ruby-version for development
-ruby '2.6.5' 
+ruby '2.6.5'
 
 gem 'bootsnap'
 gem 'coffee-rails', '~> 4.2.0'
