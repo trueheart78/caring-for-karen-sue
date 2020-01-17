@@ -1,8 +1,8 @@
-# CaringForKarenSue, Rails 5.1 Edition
+# CaringForKarenSue, Rails 5.2 Edition
 
 [![Circle CI](https://circleci.com/gh/trueheart78/CaringForKarenSue-Rails.svg?style=shield)](https://circleci.com/gh/trueheart78/CaringForKarenSue-Rails)
 
-Ruby 2.3 and Rails 5.1, spec'd out with RSpec 3.
+Ruby 2.6 and Rails 5.2, spec'd out with RSpec 3.
 
 ## Environment Variables
 
