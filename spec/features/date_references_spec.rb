@@ -1,15 +1,17 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.feature 'Dates', type: :feature do
-  scenario 'About page has the current iteration' do
+RSpec.describe 'Dates', type: :feature do
+  it 'About page has the current iteration' do
     visit about_path
-    expect(page.text).to include('seventh')
+    expect(page.text).to include('eleventh')
   end
 
-  scenario 'Homepage banner has the current iteration' do
+  it 'Homepage banner has the current iteration' do
     visit root_path
     banner = page.find '#banner'
     expect(banner).to be_visible
-    expect(banner.text).to include('7th')
+    expect(banner.text).to include('11th')
   end
 end
