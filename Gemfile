@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
 source 'https://rubygems.org'
-# ruby '2.3.4' # make sure to update the .ruby-version file as well
 
+gem 'bootsnap'
 gem 'coffee-rails', '~> 4.2.0'
 gem 'font-awesome-rails', '~> 4.7'
 gem 'jquery-rails'
 gem 'oj' # , '~> 2.12.14'
 gem 'pie-rails', '~>1.1'
-gem 'rails', '~> 5.1.0'
+gem 'rails', '~> 5.2.4.1'
 gem 'rollbar', '~> 2.12'
 gem 'sass-rails', '~> 5.0'
 gem 'turbolinks'
