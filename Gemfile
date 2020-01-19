@@ -9,8 +9,8 @@ gem 'bootsnap'
 gem 'coffee-rails', '~> 4.2.0'
 gem 'font-awesome-rails', '~> 4.7'
 gem 'jquery-rails'
-gem 'oj' # , '~> 2.12.14'
-gem 'pie-rails', '~>1.1'
+gem 'oj'
+gem 'pie-rails', '~>1.1' # progressive internet explorer
 gem 'rails', '~> 5.2.4.1'
 gem 'rollbar', '~> 2.12'
 gem 'sass-rails', '~> 5.0'
@@ -18,6 +18,7 @@ gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 group :development do
   gem 'web-console', '~> 2.0'
+  gem 'rails_real_favicon'
 end
 
 group :development, :test do
