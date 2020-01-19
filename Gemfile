@@ -23,7 +23,7 @@ end
 group :development, :test do
   gem 'capybara', '~> 2.5'
   gem 'dotenv-rails', '~> 2.2'
-  gem 'factory_girl_rails', '~> 4.5'
+  gem 'factory_bot_rails'
   gem 'pry', '~> 0.10.3'
   gem 'rspec-rails', '~> 3.4'
   gem 'rubocop'
