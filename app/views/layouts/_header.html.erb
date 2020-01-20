@@ -1,5 +1,5 @@
 <header id="header" <%= raw('class="alt"') if current_page?(root_url) %>>
-  <h1><%= link_to 'Caring for Karen Sue', root_path %></h1>
+  <h1><%= link_to(image_tag('logo.png', width: 70, style: 'margin-top: 5px'), root_path, title: 'Caring for Karen Sue') %></h1>
   <nav id="nav">
     <ul>
       <li><%= link_to 'Home', root_path %></li>
