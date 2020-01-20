@@ -20,45 +20,31 @@
     </header>
     <% # <span class="image featured"><%= image_tag('pic01.jpg') % ></span> %>
   </section>
-  <!--
-  <section class="box special features">
-    <div class="features-row">
-      <section>
-        <span class="icon major fa-bolt accent2"></span>
-        <h3>Magna etiam</h3>
-        <p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
-      </section>
-      <section>
-        <span class="icon major fa-area-chart accent3"></span>
-        <h3>Ipsum dolor</h3>
-        <p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
-      </section>
-    </div>
-    <div class="features-row">
-      <section>
-        <span class="icon major fa-cloud accent4"></span>
-        <h3>Sed feugiat</h3>
-        <p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
-      </section>
-      <section>
-        <span class="icon major fa-lock accent5"></span>
-        <h3>Enim phasellus</h3>
-        <p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
-      </section>
-    </div>
-  </section>
-  -->
   <div class="row">
     <div class="6u 12u(narrower)">
       <section class="box special">
+        <span class="image featured"><%= image_tag('sponsors/applewood-golf-course.png') %></span>
+        <h3><%= link_to Event.venue, Event.website, target: 'blank' %></h3>
+        <p><%= Event.full_address.join('<br/>').html_safe %>
+        <br/>
+        <%= link_to 'View on Google Maps', Event.google_maps_url, target: 'blank' %>
+        <br/>
+      </section>
+    </div>
+    <div class="6u 12u(narrower)">
+      <section class="box special">
         <span class="image featured"><%= image_tag('welcome/signup.png') %></span>
-        <h3>Signup</h3>
-        <p>Come out and play!</p>
+        <h3><%= Event.date %></h3>
+        <p>
+        <%= Event.time %></p>
         <ul class="actions">
           <li><a href="#" class="button alt">Signup</a></li>
         </ul>
       </section>
     </div>
+  </div>
+  <!--
+  <div class="row">
     <div class="6u 12u(narrower)">
       <section class="box special">
         <span class="image featured"><%= image_tag('pic03.jpg') %></span>
@@ -70,6 +56,7 @@
       </section>
     </div>
   </div>
+  -->
 </section>
 <!-- CTA -->
 <!--

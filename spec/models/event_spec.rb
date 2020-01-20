@@ -5,9 +5,12 @@ require 'rails_helper'
 RSpec.describe Event, type: :model do
   subject(:event) { described_class }
 
+  it 'has the expected venue' do
+    expect(event.venue).to eq 'Applewood Golf Course'
+  end
+
   it 'has the expected full_address' do
-    expect(event.full_address).to eq ['Applewood Golf Course',
-                                      '14001 W. 32nd Avenue',
+    expect(event.full_address).to eq ['14001 W. 32nd Avenue',
                                       'Golden, CO 80401']
   end
 

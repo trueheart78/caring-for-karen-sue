@@ -2,9 +2,12 @@
 
 class Event
   class << self
+    def venue
+      'Applewood Golf Course'
+    end
+
     def full_address
       [
-        venue,
         address,
         "#{city}, #{state} #{zip}"
       ]
@@ -27,10 +30,6 @@ class Event
     end
 
     private
-
-    def venue
-      'Applewood Golf Course'
-    end
 
     def address
       '14001 W. 32nd Avenue'
