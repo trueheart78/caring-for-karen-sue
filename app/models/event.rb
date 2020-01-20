@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Event
   class << self
     def full_address
@@ -45,7 +47,5 @@ class Event
     def zip
       '80401'
     end
-
-
   end
 end
