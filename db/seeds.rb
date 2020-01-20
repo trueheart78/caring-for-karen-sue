@@ -16,7 +16,7 @@ sponsors = [
   },
   {
     name: 'Vista at Applewood Golf Course',
-    tagline: 'xyz',
+    tagline: ' ',
     url: 'http://www.vistaapplewood.com',
     image: 'the-vista-at-applewood.png',
     active: true
@@ -33,6 +33,20 @@ sponsors = [
     tagline: 'We live where we build. We build where we live.',
     url: 'https://www.hwhouston.com/',
     image: 'hw-houston.png',
+    active: true
+  },
+  {
+    name: 'First Bank',
+    tagline: 'Banking for good.',
+    url: 'https://www.efirstbank.com/',
+    image: 'first-bank.png',
+    active: true
+  },
+  {
+    name: 'Davis Partnership Architects',
+    tagline: ' ',
+    url: 'https://davispartnership.com/',
+    image: 'davis-partnership-architects.png',
     active: true
   },
 ]
