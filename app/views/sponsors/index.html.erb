@@ -2,31 +2,22 @@
 <section class="box special">
     <header class="major">
       <h2>Caring for Karen Sue Sponsors</h2>
-      <%= @sponsors.first.name %>
     </header>
   </section>
   <% if @sponsors.any? %>
- <div class="row">
-    <div class="6u 12u(narrower)">
-      <section class="box special">
-        <span class="image featured"><%= image_tag("sponsors/#{@sponsors.first.image}") %></span>
-        <h3><%= @sponsors.first.name %></h3>
-        <p><%= @sponsors.first.tagline %></p>
-        <ul class="actions">
-          <li><a href="<%= @sponsors.first.url %>" class="button alt" target="_blank">Visit Site</a></li>
-        </ul>
-      </section>
-    </div>
-    <div class="6u 12u(narrower)">
-      <section class="box special">
-        <span class="image featured"><%= image_tag('pic03.jpg') %></span>
-        <h3>Sponsor B</h3>
-        <p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
-        <ul class="actions">
-          <li><a href="#" class="button alt">Visit Site</a></li>
-        </ul>
-      </section>
-    </div>
-  </div>
-<% end %>
+    <% x = 0 %>
+    <% @sponsors.each do |sponsor| %>
+      <% if x % 2 == 0 %>
+        <div class="row">
+      <% end %>
+      <%= render partial: "sponsor", locals: {sponsor: sponsor} %>
+      <% x += 1 %>
+      <% if x % 2 == 0 %>
+          </div>
+      <% end %>
+    <% end %>
+    <% if x % 2 != 0 %>
+      </div>
+    <% end %>
+  <% end %>
 </section>
