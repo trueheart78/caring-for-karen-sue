@@ -14,8 +14,30 @@ sponsors = [
     image: 'applewood-golf-course.png',
     active: true
   },
+  {
+    name: 'Vista at Applewood Golf Course',
+    tagline: 'xyz',
+    url: 'http://www.vistaapplewood.com',
+    image: 'the-vista-at-applewood.png',
+    active: true
+  },
+  {
+    name: 'Longmont Ford Dealer',
+    tagline: '3rd & Alpine',
+    url: 'https://www.longmontford.com/',
+    image: 'longmont-ford.png',
+    active: true
+  },
+  {
+    name: 'H.W. Houston Construction',
+    tagline: 'We live where we build. We build where we live.',
+    url: 'https://www.hwhouston.com/',
+    image: 'hw-houston.png',
+    active: true
+  },
 ]
 
+Sponsor.unscope(:where).destroy_all
 sponsors.each do |s|
   Sponsor.create s
 end
