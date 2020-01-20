@@ -6,6 +6,8 @@ class SponsorsTable < ActiveRecord::Migration[5.2]
       t.string :url, null: false
       t.string :image, null: false
       t.boolean :active, null: false, default: true
+
+      t.timestamps
     end
   end
 end

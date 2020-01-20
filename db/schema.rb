@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_20_004915) do
+ActiveRecord::Schema.define(version: 2020_01_20_162510) do
+
+  create_table "donations", force: :cascade do |t|
+    t.string "email", null: false
+    t.string "name", null: false
+    t.string "selection", default: "donation", null: false
+    t.string "payment_type", null: false
+    t.integer "amount_in_cents", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "sponsors", force: :cascade do |t|
     t.string "name", null: false
@@ -18,6 +28,8 @@ ActiveRecord::Schema.define(version: 2020_01_20_004915) do
     t.string "url", null: false
     t.string "image", null: false
     t.boolean "active", default: true, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
