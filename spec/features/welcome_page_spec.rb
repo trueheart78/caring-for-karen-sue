@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe 'About Page', type: :feature do
+RSpec.describe 'Welcome Page', type: :feature do
   before do
     visit root_path
   end
@@ -19,7 +19,7 @@ RSpec.describe 'About Page', type: :feature do
     expect(page.find_link('About')).to be_visible
   end
 
-  it 'Provides two buttons to Sign Up' do
-    expect(page.all('li a', text: 'Sign Up').count).to eq(2)
+  it 'Provides three buttons to Sign Up' do
+    expect(page.all('li a', text: 'Sign Up').count).to eq(3)
   end
 end
