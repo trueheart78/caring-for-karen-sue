@@ -14,7 +14,7 @@ class Event
     end
 
     def date
-      'Saturday, September 14th, 2019'
+      'Saturday, September 12th, 2020'
     end
 
     def time

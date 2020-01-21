@@ -19,7 +19,7 @@ RSpec.describe Event, type: :model do
   end
 
   it 'has the expected date' do
-    expect(event.date).to eq 'Saturday, September 14th, 2019'
+    expect(event.date).to eq 'Saturday, September 12th, 2020'
   end
 
   it 'has the expected time' do

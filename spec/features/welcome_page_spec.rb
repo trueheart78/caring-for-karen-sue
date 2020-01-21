@@ -24,8 +24,8 @@ RSpec.describe 'Welcome Page', type: :feature do
       expect(page.all('li a', text: 'Sign Up').count).to eq(3)
     end
 
-    it 'Provides a link to the Applewood Golf Course' do
-      expect(page.find_link('Applewood Golf Course')).to be_visible
+    it 'Provides a link to the venue' do
+      expect(page.find_link(Event.venue)).to be_visible
     end
 
     it 'Provides a link to the Google Maps site' do
@@ -35,11 +35,11 @@ RSpec.describe 'Welcome Page', type: :feature do
 
   context 'with event details' do
     it 'Provides the event date' do
-      expect(page.all('h3', text: 'Saturday, September 14th, 2019').count).to eq 1
+      expect(page.all('h3', text: Event.date).count).to eq 1
     end
 
     it 'Provides the event time' do
-      expect(page.all('p', text: '7:30am Shotgun Start').count).to eq 1
+      expect(page.all('p', text: Event.time).count).to eq 1
     end
   end
 end
