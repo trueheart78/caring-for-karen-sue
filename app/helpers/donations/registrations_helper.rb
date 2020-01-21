@@ -1,0 +1,2 @@
+module Donations::RegistrationsHelper
+end

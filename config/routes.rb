@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
-  get 'donations', to: 'donations#index'
-  post 'donations', to: 'donations#create'
+  resources :donations, only: [:index]
+  namespace :donations do
+    resources :registrations, only: [:new, :create]
+    resources :hole_sponsors, only: [:new, :create]
+    resources :lunches, only: [:new, :create]
+    resources :donations, only: [:new, :create]
+  end
   get 'about', to: 'about#index'
   get 'sponsors', to: 'sponsors#index'
   get 'robots.:format', to: 'robots#index'
