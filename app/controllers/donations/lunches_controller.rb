@@ -1,7 +1,7 @@
-class Donations::LunchesController < ApplicationController
-  def new
-  end
+# frozen_string_literal: true
 
-  def create
-  end
+class Donations::LunchesController < ApplicationController
+  def new; end
+
+  def create; end
 end

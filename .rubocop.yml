@@ -21,6 +21,9 @@ Layout/LineLength:
 Metrics/BlockLength:
   Max: 50
 
+Style/ClassAndModuleChildren:
+  EnforcedStyle: 'compact'
+
 AllCops:
   Exclude:
     - 'bin/*'
