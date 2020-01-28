@@ -5,7 +5,7 @@ class CreateDonations < ActiveRecord::Migration[5.2]
       t.string :name, null: false
       t.string :selection, null: false, default: 'donation'
       t.string :payment_type, null: false
-      t.integer :amount_in_cents, null: false, default: 0
+      t.integer :amount, null: false, default: 0
 
       t.timestamps
     end

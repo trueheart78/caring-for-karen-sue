@@ -14,8 +14,4 @@ class Donation < ApplicationRecord
 
     'signup'
   end
-
-  def amount
-    amount_in_cents / 100.0
-  end
 end

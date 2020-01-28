@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2020_01_20_162510) do
     t.string "name", null: false
     t.string "selection", default: "donation", null: false
     t.string "payment_type", null: false
-    t.integer "amount_in_cents", default: 0, null: false
+    t.integer "amount", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
