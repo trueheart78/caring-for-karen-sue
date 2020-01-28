@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Charity
+class Charity::ShilohHouse
   class << self
     def name
       'Shiloh House'

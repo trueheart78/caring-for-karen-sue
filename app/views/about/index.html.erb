@@ -29,14 +29,14 @@
     give you a warm hug. She always knew what to do and when to 
     do it. Our parents were foster parents and our mom had a strong
     passion to help kids less fortunate. We are very proud, and 
-    honored to have a partnership with the <%= Charity.name %> in which
+    honored to have a partnership with the <%= current_charity.name %> in which
     all the funds we raise go to.
     </p>
     <p>
-    <%= link_to image_tag("charities/#{Charity.logo}"), Charity.url, target: '_blank' %>
+    <%= link_to image_tag("charities/#{current_charity.logo}"), current_charity.url, target: '_blank' %>
     </p>
     <p>
-    <%= raw Charity.copy %>
+    <%= raw current_charity.copy %>
     </p>
     <h3>Thank you</h3>
     <p>
