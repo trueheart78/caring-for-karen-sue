@@ -36,4 +36,10 @@ RSpec.describe Registration, type: :model do
       expect(registration.all.count).to eq 10
     end
   end
+
+  describe '.cost' do
+    it 'returns 100' do
+      expect(registration.cost).to eq 100
+    end
+  end
 end

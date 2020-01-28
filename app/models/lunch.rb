@@ -12,9 +12,13 @@ class Lunch
       {}.tap do |h|
         (1..10).each do |n|
           plural = n > 1 ? 'es' : ''
-          h[n * 100] = "#{n} lunch#{plural}"
+          h[n * cost] = "#{n} lunch#{plural}"
         end
       end
+    end
+
+    def cost
+      25
     end
   end
 end
