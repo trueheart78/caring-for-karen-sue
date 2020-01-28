@@ -2,6 +2,6 @@
 
 module ApplicationHelper
   def current_charity
-    Charity::ShilohHouse
+    Charity::RightStep
   end
 end
