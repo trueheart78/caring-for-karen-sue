@@ -20,5 +20,6 @@
     <%= yield %>
     <%= render 'layouts/footer' %>
   </div>
+  <%= render 'layouts/google_analytics' if google_analytics? %>
 </body>
 </html>
