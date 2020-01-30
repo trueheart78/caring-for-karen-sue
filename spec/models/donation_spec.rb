@@ -32,6 +32,62 @@ RSpec.describe Donation, type: :model do
     end
   end
 
+  describe 'payment_type validation' do
+    subject(:donation) { build :donation, payment_type: payment_type }
+
+    context 'when a check' do
+      let(:payment_type) { 'check' }
+
+      it 'does not generate an error' do
+        expect(donation).to be_valid
+      end
+    end
+
+    context 'when paypal' do
+      let(:payment_type) { 'paypal' }
+
+      it 'does not generate an error' do
+        expect(donation).to be_valid
+      end
+    end
+
+    context 'when anything else' do
+      let(:payment_type) { 'venmo' }
+
+      it 'generates an error' do
+        expect(donation).not_to be_valid
+      end
+    end
+  end
+
+  describe 'amount validation' do
+    subject(:donation) { build :donation, amount: amount }
+
+    context 'when a positive number' do
+      let(:amount) { 25 }
+
+      it 'does not generate an error' do
+        expect(donation).to be_valid
+      end
+    end
+
+    context 'when zero' do
+      let(:amount) { 0 }
+
+      it 'generates an error' do
+        expect(donation).not_to be_valid
+      end
+    end
+
+    context 'when a non-integer' do
+      let(:amount) { 'one' }
+
+      it 'generates an error' do
+        expect(donation).not_to be_valid
+      end
+    end
+  end
+
   describe '#donation?' do
     subject(:donation) { create :donation, selection: selection }
 
