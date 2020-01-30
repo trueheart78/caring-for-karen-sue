@@ -32,6 +32,26 @@ RSpec.describe Donation, type: :model do
     end
   end
 
+  describe 'email validation' do
+    subject(:donation) { build :donation, email: email }
+
+    context 'when a valid email' do
+      let(:email) { 'user@domain.com' }
+
+      it 'is valid' do
+        expect(donation).to be_valid
+      end
+    end
+
+    context 'when an invalid email' do
+      let(:email) { 'userdomain.com' }
+
+      it 'is not valid' do
+        expect(donation).not_to be_valid
+      end
+    end
+  end
+
   describe 'selection validation' do
     subject(:donation) { build :donation, selection: selection }
 
