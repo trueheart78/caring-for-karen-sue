@@ -10,7 +10,7 @@ RSpec.describe Donation, type: :model do
     context 'when just right' do
       let(:name) { 'test' }
 
-      it 'does not generate an error' do
+      it 'is valid' do
         expect(donation).to be_valid
       end
     end
@@ -18,7 +18,7 @@ RSpec.describe Donation, type: :model do
     context 'when too short' do
       let(:name) { 't' }
 
-      it 'generates an error' do
+      it 'is not valid' do
         expect(donation).not_to be_valid
       end
     end
@@ -26,7 +26,29 @@ RSpec.describe Donation, type: :model do
     context 'when too short' do
       let(:name) { 't' * 31 }
 
-      it 'generates an error' do
+      it 'is not valid' do
+        expect(donation).not_to be_valid
+      end
+    end
+  end
+
+  describe 'selection validation' do
+    subject(:donation) { build :donation, selection: selection }
+
+    %w[donation lunch registration hole_sponsor].each do |selected|
+      context "when set as #{selected}" do
+        let(:selection) { selected }
+
+        it 'is valid' do
+          expect(donation).to be_valid
+        end
+      end
+    end
+
+    context 'when anything else' do
+      let(:selection) { 'silent_auction' }
+
+      it 'is not valid' do
         expect(donation).not_to be_valid
       end
     end
@@ -35,26 +57,20 @@ RSpec.describe Donation, type: :model do
   describe 'payment_type validation' do
     subject(:donation) { build :donation, payment_type: payment_type }
 
-    context 'when a check' do
-      let(:payment_type) { 'check' }
+    %w[check paypal].each do |payment|
+      context "when set as #{payment}" do
+        let(:payment_type) { payment }
 
-      it 'does not generate an error' do
-        expect(donation).to be_valid
-      end
-    end
-
-    context 'when paypal' do
-      let(:payment_type) { 'paypal' }
-
-      it 'does not generate an error' do
-        expect(donation).to be_valid
+        it 'is valid' do
+          expect(donation).to be_valid
+        end
       end
     end
 
     context 'when anything else' do
       let(:payment_type) { 'venmo' }
 
-      it 'generates an error' do
+      it 'is not valid' do
         expect(donation).not_to be_valid
       end
     end
@@ -66,7 +82,7 @@ RSpec.describe Donation, type: :model do
     context 'when a positive number' do
       let(:amount) { 25 }
 
-      it 'does not generate an error' do
+      it 'is valid' do
         expect(donation).to be_valid
       end
     end
@@ -74,7 +90,7 @@ RSpec.describe Donation, type: :model do
     context 'when zero' do
       let(:amount) { 0 }
 
-      it 'generates an error' do
+      it 'is not valid' do
         expect(donation).not_to be_valid
       end
     end
@@ -82,7 +98,7 @@ RSpec.describe Donation, type: :model do
     context 'when a non-integer' do
       let(:amount) { 'one' }
 
-      it 'generates an error' do
+      it 'is not valid' do
         expect(donation).not_to be_valid
       end
     end
