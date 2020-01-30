@@ -9,6 +9,8 @@ class Donation < ApplicationRecord
     !donation?
   end
 
+  private
+
   def type
     return 'donation' if selection == 'donation'
 
