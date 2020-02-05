@@ -11,9 +11,14 @@
   </div>
 
   <div class="field">
-    <%= f.label :amount %>
-    <%= f.text_field :amount %>
+    <%= f.label :sponsor_level %>
   </div>
+  <% HoleSponsor.all.each do |amount, details| %>
+    <div class="field">
+      <%= f.radio_button :amount, amount %>
+      <%= f.label "amount_#{amount}", "#{details[:name]} for $#{number_with_delimiter(amount, delimiter: ',')}" %>
+    </div>
+  <% end %>
 
   <div class="field">
     <%= f.label :payment_type %>
