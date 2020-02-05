@@ -19,6 +19,14 @@ class Donation < ApplicationRecord
     !donation?
   end
 
+  def payment_types
+    [
+      ['-- Please Select --', 'none'],
+      ['Check/Money Order', 'check'],
+      ['Paypal/Credit Card', 'paypal']
+    ]
+  end
+
   private
 
   def type

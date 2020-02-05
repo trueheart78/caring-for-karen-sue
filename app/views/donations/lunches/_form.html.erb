@@ -12,12 +12,12 @@
 
   <div class="field">
     <%= f.label :amount %>
-    <%= f.text_field :amount %>
+    <%= f.select :amount, lunch_options %>
   </div>
 
   <div class="field">
     <%= f.label :payment_type %>
-    <%= f.text_field :payment_type %>
+    <%= f.select :payment_type, @donation.payment_types %>
   </div>
 
   <br />

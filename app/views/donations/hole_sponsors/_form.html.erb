@@ -17,7 +17,7 @@
 
   <div class="field">
     <%= f.label :payment_type %>
-    <%= f.text_field :payment_type %>
+    <%= f.select :payment_type, @donation.payment_types %>
   </div>
 
   <br />
