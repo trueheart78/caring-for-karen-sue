@@ -10,7 +10,7 @@ class Donations::LunchesController < ApplicationController
     @donation.selection = 'lunch'
 
     if @donation.save
-      redirect_to root_path, notice: "Your #{donation.selection} has been noted!"
+      redirect_to successes_path, notice: "Your #{@donation.selection} has been noted!"
     else
       render :edit
     end
