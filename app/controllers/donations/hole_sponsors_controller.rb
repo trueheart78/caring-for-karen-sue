@@ -10,7 +10,7 @@ class Donations::HoleSponsorsController < ApplicationController
     @donation.selection = 'hole_sponsor'
 
     if @donation.save
-      redirect_to successes_path, notice: "Your #{@donation.selection} has been noted!"
+      redirect_to successes_path, notice: "Your #{@donation.selection.tr('_', ' ')} has been noted!"
     else
       render :edit
     end
