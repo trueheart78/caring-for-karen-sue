@@ -12,7 +12,7 @@ class HoleSponsor
     def all
       {
         200 => { name: 'Hole',
-                 description: '' },
+                 description: '1 Hole Sponsor' },
         500 => { name: 'Birdie',
                  description: '1 Foursome and 1 Hole Sponsor' },
         700 => { name: 'Eagle',
