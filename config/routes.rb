@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :donations, only: [:index]
   namespace :donations do
     resources :registrations, only: [:new, :create]
     resources :hole_sponsors, only: [:new, :create]
@@ -10,6 +9,9 @@ Rails.application.routes.draw do
   get 'donations/registrations', to: 'donations/registrations#new'
   get 'donations/lunches', to: 'donations/lunches#new'
   get 'donations/donations', to: 'donations/donations#new'
+  get 'cancellations/index', to: 'cancellations#index'
+  get 'cancellations', to: 'cancellations#index'
+  resources :donations, only: [:index]
   get 'about', to: 'about#index'
   get 'sponsors', to: 'sponsors#index'
   get 'robots.:format', to: 'robots#index'
