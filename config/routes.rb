@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get 'donations/registrations', to: 'donations/registrations#new'
   get 'donations/lunches', to: 'donations/lunches#new'
   get 'donations/donations', to: 'donations/donations#new'
+  get 'successes/index', to: 'successes#index'
+  get 'successes', to: 'successes#index'
   get 'cancellations/index', to: 'cancellations#index'
   get 'cancellations', to: 'cancellations#index'
   resources :donations, only: [:index]
