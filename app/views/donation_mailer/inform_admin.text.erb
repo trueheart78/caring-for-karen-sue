@@ -1,0 +1,7 @@
+You have received a registration for the CaringForKarenSue.com <%= Event.iteration %> Annual Golf Classic
+
+Name: <%= @donation.name %>
+Email: <%= @donation.email %>
+Selected: <%= @donation.selected_item %>
+Amount: $<%= number_with_delimiter(@donation.amount, ',') %>
+Paying By: <%= @donation.payment_type %>

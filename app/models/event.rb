@@ -22,7 +22,7 @@ class Event
     end
 
     def check_deadline
-      'Thursday, September 10th, 2020'
+      'Wednesday, September 2nd, 2020'
     end
 
     def iteration

@@ -26,6 +26,14 @@ RSpec.describe Event, type: :model do
     expect(event.time).to eq '7:30am Shotgun Start'
   end
 
+  it 'has the expected check deadline' do
+    expect(event.check_deadline).to eq 'Wednesday, September 2nd, 2020'
+  end
+
+  it 'has the expected iteration' do
+    expect(event.iteration).to eq '11th'
+  end
+
   it 'has the expected google maps url' do
     expect(event.google_maps_url).to eq 'https://maps.google.com/maps?q=Applewood+Golf+Course,+W+32nd+Ave,+Golden,+CO&hl=en&ll=39.76489,-105.156605&spn=0.010177,0.020084&sll=39.762611,-105.157246&sspn=0.010177,0.020084&oq=apple14001+W+32nd+Ave,+Golden,+CO&t=m&z=16&iwloc=A'
   end

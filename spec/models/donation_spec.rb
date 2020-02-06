@@ -24,7 +24,7 @@ RSpec.describe Donation, type: :model do
     end
 
     context 'when too short' do
-      let(:name) { 't' * 31 }
+      let(:name) { 't' * 51 }
 
       it 'is not valid' do
         expect(donation).not_to be_valid
@@ -162,6 +162,27 @@ RSpec.describe Donation, type: :model do
         expect(donation).not_to be_a_signup
       end
     end
+  end
+
+  describe '#paying_by_check?' do
+    subject(:donation) { create :donation, payment_type: payment_type }
+
+    context 'when the payment type is a check' do
+      let(:payment_type) { 'check' }
+
+      it 'returns true' do
+        expect(donation).to be_paying_by_check
+      end
+    end
+
+    context 'when the payment type is not a check' do
+      let(:payment_type) { 'paypal' }
+
+      it 'returns false' do
+        expect(donation).not_to be_paying_by_check
+      end
+    end
+
   end
 end
 # rubocop:enable Metrics/BlockLength
