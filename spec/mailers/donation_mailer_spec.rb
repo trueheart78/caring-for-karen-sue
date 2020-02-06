@@ -3,5 +3,9 @@
 require 'rails_helper'
 
 RSpec.describe DonationMailer, type: :mailer do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'ADMIN_EMAIL' do
+    it 'is set as expected' do
+      expect(described_class::ADMIN_EMAIL).to eq 'caring-site@nym.hush.com'
+    end
+  end
 end
