@@ -10,6 +10,7 @@ class Donations::DonationsController < ApplicationController
     @donation.selection = 'donation'
 
     if @donation.save
+      DonationMailer.with(donation: @donation).thank_you.deliver_later
       redirect_to successes_path, notice: "Your #{@donation.selection} has been noted!"
     else
       render :edit

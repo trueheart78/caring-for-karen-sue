@@ -21,6 +21,14 @@ class Donation < ApplicationRecord
     !donation?
   end
 
+  def paying_by_check?
+    payment_type == 'check'
+  end
+
+  def selected_item
+    'Donation'
+  end
+
   def payment_types
     [
       ['-- Please Select --', 'none'],
