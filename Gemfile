@@ -12,6 +12,7 @@ gem 'jquery-rails'
 gem 'oj'
 gem 'pie-rails', '~>1.1' # progressive internet explorer
 gem 'rails', '~> 5.2.4.1'
+gem 'rails-controller-testing'
 gem 'rollbar', '~> 2.12'
 gem 'sass-rails', '~> 5.0'
 gem 'turbolinks'
