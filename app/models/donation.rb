@@ -25,6 +25,7 @@ class Donation < ApplicationRecord
     payment_type == 'check'
   end
 
+  # TODO: change this to reflect the quantity that they selected
   def selected_item
     selection.titleize
   end
