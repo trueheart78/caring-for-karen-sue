@@ -9,11 +9,4 @@ RSpec.describe Donations::DonationsController, type: :controller do
       expect(response).to be_successful
     end
   end
-
-  describe 'GET #create' do
-    it 'returns http success' do
-      get :create
-      expect(response).to be_successful
-    end
-  end
 end

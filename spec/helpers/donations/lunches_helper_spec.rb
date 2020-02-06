@@ -13,5 +13,24 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe Donations::LunchesHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe '#lunch_options' do
+    let(:expected_array) do
+      [
+        ['1 lunch for $25', 25],
+        ['2 lunches for $50', 50],
+        ['3 lunches for $75', 75],
+        ['4 lunches for $100', 100],
+        ['5 lunches for $125', 125],
+        ['6 lunches for $150', 150],
+        ['7 lunches for $175', 175],
+        ['8 lunches for $200', 200],
+        ['9 lunches for $225', 225],
+        ['10 lunches for $250', 250]
+      ]
+    end
+
+    it 'returns the expected array' do
+      expect(helper.lunch_options).to eq expected_array
+    end
+  end
 end

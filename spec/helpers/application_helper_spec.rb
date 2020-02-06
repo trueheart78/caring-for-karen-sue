@@ -13,13 +13,13 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe ApplicationHelper, type: :helper do
-  describe 'current_charity' do
+  describe '#current_charity' do
     it 'is set to the expected class' do
       expect(helper.current_charity).to be Charity::RightStep
     end
   end
 
-  describe 'google_analytics?' do
+  describe '#google_analytics?' do
     subject(:analytics) { helper.google_analytics? }
 
     context 'when both env vars are set' do
@@ -55,14 +55,14 @@ RSpec.describe ApplicationHelper, type: :helper do
     end
   end
 
-  describe 'google_analytics_key' do
+  describe '#google_analytics_key' do
     it 'returns the ENV["GOOGLE_ANALYTICS_KEY"] value' do
       ENV['GOOGLE_ANALYTICS_KEY'] = SecureRandom.hex 10
       expect(helper.google_analytics_key).to eq ENV['GOOGLE_ANALYTICS_KEY']
     end
   end
 
-  describe 'google_analytics_site' do
+  describe '#google_analytics_site' do
     it 'returns the ENV["GOOGLE_ANALYTICS_SITE"] value' do
       ENV['GOOGLE_ANALYTICS_SITE'] = SecureRandom.hex 10
       expect(helper.google_analytics_site).to eq ENV['GOOGLE_ANALYTICS_SITE']
