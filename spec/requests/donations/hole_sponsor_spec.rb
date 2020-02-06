@@ -22,9 +22,10 @@ RSpec.describe 'Hole Sponsors', type: :request do
         expect(response).to redirect_to(successes_path)
       end
 
-      xit 'sends emails' do
-        # expect(DonationMailer).to receive(:with)
-        post endpoint, params: { donation: donation }
+      it 'sends emails' do
+        expect do
+          post endpoint, params: { donation: donation }
+        end.to have_enqueued_job.twice.on_queue('mailers')
       end
     end
 
@@ -44,9 +45,10 @@ RSpec.describe 'Hole Sponsors', type: :request do
         expect(response).to render_template(:new)
       end
 
-      xit 'does not send emails' do
-        post endpoint, params: { donation: donation }
-        # expect(DonationMailer).not_to have_received(:with)
+      it 'does not send emails' do
+        expect do
+          post endpoint, params: { donation: donation }
+        end.not_to have_enqueued_job.on_queue('mailers')
       end
     end
   end
