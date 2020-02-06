@@ -26,7 +26,7 @@ class Donation < ApplicationRecord
   end
 
   def selected_item
-    'Donation'
+    selection.titleize
   end
 
   def payment_types
