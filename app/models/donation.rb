@@ -30,7 +30,7 @@ class Donation < ApplicationRecord
     selection.titleize
   end
 
-  def payment_types
+  def self.payment_types
     [
       ['-- Please Select --', 'none'],
       ['Check/Money Order', 'check'],

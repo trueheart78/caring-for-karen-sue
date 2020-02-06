@@ -74,28 +74,6 @@ RSpec.describe Donation, type: :model do
     end
   end
 
-  describe 'payment_type validation' do
-    subject(:donation) { build :donation, payment_type: payment_type }
-
-    %w[check paypal].each do |payment|
-      context "when set as #{payment}" do
-        let(:payment_type) { payment }
-
-        it 'is valid' do
-          expect(donation).to be_valid
-        end
-      end
-    end
-
-    context 'when anything else' do
-      let(:payment_type) { 'venmo' }
-
-      it 'is not valid' do
-        expect(donation).not_to be_valid
-      end
-    end
-  end
-
   describe 'amount validation' do
     subject(:donation) { build :donation, amount: amount }
 
@@ -124,6 +102,28 @@ RSpec.describe Donation, type: :model do
     end
   end
 
+  describe 'payment_type validation' do
+    subject(:donation) { build :donation, payment_type: payment_type }
+
+    %w[check paypal].each do |payment|
+      context "when set as #{payment}" do
+        let(:payment_type) { payment }
+
+        it 'is valid' do
+          expect(donation).to be_valid
+        end
+      end
+    end
+
+    context 'when anything else' do
+      let(:payment_type) { 'venmo' }
+
+      it 'is not valid' do
+        expect(donation).not_to be_valid
+      end
+    end
+  end
+
   describe '#donation?' do
     subject(:donation) { create :donation, selection: selection }
 
@@ -141,6 +141,20 @@ RSpec.describe Donation, type: :model do
       it 'returns false' do
         expect(donation).not_to be_a_donation
       end
+    end
+  end
+
+  describe '.payment_types' do
+    let(:expected_array) do
+      [
+        ['-- Please Select --', 'none'],
+        ['Check/Money Order', 'check'],
+        ['Paypal/Credit Card', 'paypal']
+      ]
+    end
+
+    it 'has the expected elements' do
+      expect(described_class.payment_types).to eq expected_array
     end
   end
 
