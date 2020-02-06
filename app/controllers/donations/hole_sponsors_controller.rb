@@ -14,7 +14,7 @@ class Donations::HoleSponsorsController < ApplicationController
       DonationMailer.with(donation: @donation).inform_admin.deliver_later
       redirect_to successes_path, notice: "Your #{@donation.selection.tr('_', ' ')} has been noted!"
     else
-      render :edit
+      render :new
     end
   end
 
