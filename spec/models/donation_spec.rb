@@ -182,7 +182,6 @@ RSpec.describe Donation, type: :model do
         expect(donation).not_to be_paying_by_check
       end
     end
-
   end
 end
 # rubocop:enable Metrics/BlockLength
