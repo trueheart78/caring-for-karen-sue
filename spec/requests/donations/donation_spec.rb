@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe 'Basic Donations', type: :request do
   describe 'creating a new donation' do
-    let(:endpoint) { '/donations/lunches' }
+    let(:endpoint) { '/donations/donations' }
 
     context 'when the data is valid' do
       let(:donation) do
