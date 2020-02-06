@@ -25,7 +25,7 @@ RSpec.describe Donations::RegistrationsHelper, type: :helper do
         ['7 players for $700', 700],
         ['8 players for $800', 800],
         ['9 players for $900', 900],
-        ['10 players for $1,000', 1_000],
+        ['10 players for $1,000', 1_000]
       ]
     end
 
