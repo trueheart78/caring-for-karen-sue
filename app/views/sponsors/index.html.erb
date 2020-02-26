@@ -1,0 +1,23 @@
+<section id="main" class="container">
+<section class="box special">
+    <header class="major">
+      <h2>Caring for Karen Sue Sponsors</h2>
+    </header>
+  </section>
+  <% if @sponsors.any? %>
+    <% x = 0 %>
+    <% @sponsors.each do |sponsor| %>
+      <% if x % 2 == 0 %>
+        <div class="row">
+      <% end %>
+      <%= render partial: "sponsor", locals: {sponsor: sponsor} %>
+      <% x += 1 %>
+      <% if x % 2 == 0 %>
+          </div>
+      <% end %>
+    <% end %>
+    <% if x % 2 != 0 %>
+      </div>
+    <% end %>
+  <% end %>
+</section>

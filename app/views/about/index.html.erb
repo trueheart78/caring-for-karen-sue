@@ -29,18 +29,14 @@
     give you a warm hug. She always knew what to do and when to 
     do it. Our parents were foster parents and our mom had a strong
     passion to help kids less fortunate. We are very proud, and 
-    honored to have a partnership with the Shiloh House in which
+    honored to have a partnership with the <%= current_charity.name %> in which
     all the funds we raise go to.
     </p>
-    <h3>
-      <%= link_to 'The Shiloh House', 'http://www.shilohhouse.org', target: '_blank' %>
-    </h3>
     <p>
-    The Shiloh House is a 501 (C) (3) that offers both residential
-    and non-residential treatment for the treatment of male and 
-    female youth. They are greatly involved in foster care and they
-    also give back and help the community. Visit them online at
-    <%= link_to 'shilohhouse.org', 'http://www.shilohhouse.org', target: '_blank' %>
+    <%= link_to image_tag("charities/#{current_charity.logo}"), current_charity.url, target: '_blank' %>
+    </p>
+    <p>
+    <%= raw current_charity.copy %>
     </p>
     <h3>Thank you</h3>
     <p>

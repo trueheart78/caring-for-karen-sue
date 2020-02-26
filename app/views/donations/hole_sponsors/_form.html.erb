@@ -1,0 +1,32 @@
+<%= form_for @donation, url: {action: "create"} do |f| %>
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= f.label :sponsorship_level %>
+  </div>
+  <% HoleSponsor.all.each do |amount, details| %>
+    <div class="field">
+      <%= f.radio_button :amount, amount, checked: ((amount == 200 && @donation.amount == 0) || (@donation.amount == amount)) %>
+      <%= f.label "amount_#{amount}", "#{details[:name]} for $#{number_with_delimiter(amount, delimiter: ',')} -- #{details[:description]}" %>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :payment_type %>
+    <%= f.select :payment_type, Donation.payment_types %>
+  </div>
+
+  <br />
+  <div class="actions">
+    <%= f.submit 'Sponsor a Hole', html: { class: 'button' } %>
+    <%= link_to 'Cancel', donations_path, class: 'button alt' %>
+  </div>
+<% end %>

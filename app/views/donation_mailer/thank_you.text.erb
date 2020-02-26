@@ -1,0 +1,19 @@
+You have registered for the CaringForKarenSue.com <%= Event.iteration %> Annual Golf Classic
+
+Name: <%= @donation.name %>
+Email: <%= @donation.email %>
+Selected: <%= @donation.selected_item %>
+Amount: $<%= number_with_delimiter(@donation.amount, delimiter: ',') %>
+Paying By: <%= @donation.payment_type %>
+
+<% if @donation.paying_by_check? %>
+Please send a check or money order for the above amount to:
+
+  1st Bank
+  PO Box 507
+  Arvada, CO 80001
+
+Make your check or money order payable to: Karen Sue Benefit Fund
+
+The deadline for your check is <%= Event.check_deadline %>.
+<% end %>

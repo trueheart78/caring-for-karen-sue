@@ -3,7 +3,7 @@ ENV['RAILS_ENV'] ||= 'test'
 require "support/simplecov"
 require File.expand_path('../../config/environment', __FILE__)
 # Prevent database truncation if the environment is production
-abort("The Rails environment is running in production mode!") if Rails.env.production?
+abort("The Rails environment is not running in test mode!") unless Rails.env.test?
 require 'spec_helper'
 require 'rspec/rails'
 
@@ -13,6 +13,9 @@ Dir[Rails.root.join('spec/contexts/**/*.rb')].each { |f| require f }
 # Checks for pending migration and applies them before tests are run.
 # If you are not using ActiveRecord, you can remove this line.
 ActiveRecord::Migration.maintain_test_schema!
+
+# Set the queue_adapter for testing
+ActiveJob::Base.queue_adapter = :test
 
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
