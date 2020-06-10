@@ -178,6 +178,26 @@ RSpec.describe Donation, type: :model do
     end
   end
 
+  describe '#paypal?' do
+    subject(:donation) { create :donation, payment_type: payment_type }
+
+    context 'when the payment type is paypal' do
+      let(:payment_type) { 'paypal' }
+
+      it 'returns true' do
+        expect(donation).to be_paypal
+      end
+    end
+
+    context 'when the payment type is not paypal' do
+      let(:payment_type) { 'check' }
+
+      it 'returns false' do
+        expect(donation).not_to be_paypal
+      end
+    end
+  end
+
   describe '#paying_by_check?' do
     subject(:donation) { create :donation, payment_type: payment_type }
 
@@ -196,6 +216,15 @@ RSpec.describe Donation, type: :model do
         expect(donation).not_to be_paying_by_check
       end
     end
+  end
+
+  describe '#paypal_url' do
+    subject(:donation) { create :donation }
+
+      it 'returns true' do
+        binding.pry
+        expect(donation).to be_paying_by_check
+      end
   end
 end
 # rubocop:enable Metrics/BlockLength

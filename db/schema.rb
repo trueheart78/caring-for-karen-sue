@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_20_162510) do
+ActiveRecord::Schema.define(version: 2020_06_10_155522) do
 
   create_table "donations", force: :cascade do |t|
     t.string "email", null: false
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2020_01_20_162510) do
     t.integer "amount", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "quantity", default: 1
   end
 
   create_table "sponsors", force: :cascade do |t|

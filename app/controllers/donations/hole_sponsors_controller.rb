@@ -10,9 +10,13 @@ class Donations::HoleSponsorsController < ApplicationController
     @donation.selection = 'hole_sponsor'
 
     if @donation.save
-      DonationMailer.with(donation: @donation).thank_you.deliver_later
-      DonationMailer.with(donation: @donation).inform_admin.deliver_later
-      redirect_to successes_path, notice: "Your #{@donation.selection.tr('_', ' ')} has been noted!"
+      if @donation.paypal?
+        # TODO: redirect here
+      else
+        DonationMailer.with(donation: @donation).thank_you.deliver_later
+        DonationMailer.with(donation: @donation).inform_admin.deliver_later
+        redirect_to successes_path, notice: "Your #{@donation.selection.tr('_', ' ')} has been noted!"
+      end
     else
       render :new
     end

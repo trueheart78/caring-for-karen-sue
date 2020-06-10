@@ -42,4 +42,11 @@ RSpec.describe Registration, type: :model do
       expect(registration.cost).to eq 100
     end
   end
+
+  describe '.qty_from_total' do
+    it 'returns the expected amount' do
+      qty = 9
+      expect(registration.qty_from_total(9 * registration.cost)).to eq qty
+    end
+  end
 end
