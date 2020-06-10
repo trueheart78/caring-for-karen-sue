@@ -9,8 +9,8 @@ class Donations::LunchesController < ApplicationController
   def create
     @donation = Donation.new(donation_params)
     @donation.selection = 'lunch'
-    @donation.amount   = Lunch.cost
     @donation.quantity = Lunch.qty_from_total(params[:donation][:amount].to_i)
+    @donation.amount   = Lunch.cost
 
     if @donation.save
       if @donation.paypal?

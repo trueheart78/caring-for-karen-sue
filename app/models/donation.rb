@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class Donation < ApplicationRecord
-  attr_accessor :quantity
   validates :name, length: { minimum: 2, maximum: 50, message: 'Name is invalid' }
   # https://api.rubyonrails.org/v5.2/classes/ActiveModel/Validations/ClassMethods.html#method-i-validates
   validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create,
@@ -72,12 +71,13 @@ class Donation < ApplicationRecord
       business: 'merchant@trueheart78.com',
       cmd: '_xclick',
       upload: 1,
-      return: URI.join(Rails.application.secrets.app_host, return_path),
+      return: Rails.application.secrets.app_host,
       invoice: id,
       amount: amount,
       item_name: selected_item,
       item_number: item_num,
-      quantity: quantity
+      quantity: quantity,
+      notify_url: "#{Rails.application.secrets.app_host}/hook"
     }
   end
   # rubocop:enable Metrics/MethodLength

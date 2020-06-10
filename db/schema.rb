@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_10_155522) do
+ActiveRecord::Schema.define(version: 2020_06_10_181331) do
 
   create_table "donations", force: :cascade do |t|
     t.string "email", null: false
@@ -21,6 +21,10 @@ ActiveRecord::Schema.define(version: 2020_06_10_155522) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "quantity", default: 1
+    t.text "notification_params"
+    t.string "status", default: "Incomplete"
+    t.string "transaction_id"
+    t.datetime "purchased_at"
   end
 
   create_table "sponsors", force: :cascade do |t|

@@ -9,8 +9,8 @@ class Donations::RegistrationsController < ApplicationController
   def create
     @donation = Donation.new(donation_params)
     @donation.selection = 'registration'
-    @donation.amount   = Registration.cost
     @donation.quantity = Registration.qty_from_total(params[:donation][:amount].to_i)
+    @donation.amount   = Registration.cost
 
     if @donation.save
       if @donation.paypal?
