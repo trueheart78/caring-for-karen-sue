@@ -5,16 +5,17 @@ class Donations::RegistrationsController < ApplicationController
     @donation = Donation.new
   end
 
+  # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
   def create
     @donation = Donation.new(donation_params)
     @donation.selection = 'registration'
-    @donation.quantity = Registration.qty_from_total params[:donation][:amount]
+    @donation.amount   = Registration.cost
+    @donation.quantity = Registration.qty_from_total(params[:donation][:amount].to_i)
 
     if @donation.save
       if @donation.paypal?
-        # TODO: verify this, maybe in console?
-        redirect_to @donation.paypal_url(donation_registration_path(@donation))
-      else
+        redirect_to @donation.paypal_url(new_donations_registration_path)
+      elsif @donation.paying_by_check?
         DonationMailer.with(donation: @donation).thank_you.deliver_later
         DonationMailer.with(donation: @donation).inform_admin.deliver_later
         redirect_to successes_path, notice: "Your #{@donation.selection} has been noted!"
@@ -23,6 +24,7 @@ class Donations::RegistrationsController < ApplicationController
       render :new
     end
   end
+  # rubocop:enable Metrics/MethodLength, Metrics/AbcSize
 
   private
 

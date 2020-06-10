@@ -39,8 +39,8 @@ class Donation < ApplicationRecord
   end
 
   def paypal_url(return_path)
-    URI.join Rails.application.secrets.paypal_host,
-             "cgi-bin/webscr?#{paypal_values(return_path).to_query}"
+    URI.join(Rails.application.secrets.paypal_host,
+             "cgi-bin/webscr?#{paypal_values(return_path).to_query}").to_s
   end
 
   def self.payment_types

@@ -219,12 +219,19 @@ RSpec.describe Donation, type: :model do
   end
 
   describe '#paypal_url' do
-    subject(:donation) { create :donation }
+    subject(:url) { create(:donation, quantity: qty).paypal_url return_path }
 
-      it 'returns true' do
-        binding.pry
-        expect(donation).to be_paying_by_check
-      end
+    let(:qty)         { 5 }
+    let(:return_path) { 'xyz' }
+    let(:expected_url) do
+      'https://www.sandbox.paypal.com/cgi-bin/webscr?amount=100&business=merchant' \
+      '%40trueheart78.com&cmd=_xclick&invoice=1&item_name=Donation&item_number=1' \
+      '&quantity=5&return=http%3A%2F%2Flocalhost%2Fxyz&upload=1'
+    end
+
+    it 'returns the expected path' do
+      expect(url).to eq expected_url
+    end
   end
 end
 # rubocop:enable Metrics/BlockLength
