@@ -66,13 +66,12 @@ class Donation < ApplicationRecord
   end
 
   # rubocop:disable Metrics/MethodLength
-  # # TODO: make return_path a success path that has a generic thank you
   def paypal_values(return_path)
     {
       business: ENV['PAYPAL_MERCHANT_EMAIL'],
       cmd: '_xclick',
       upload: 1,
-      return: Rails.application.secrets.app_host,
+      return: "#{Rails.application.secrets.app_host}/#{return_path}",
       invoice: id,
       amount: amount,
       item_name: selected_item,
