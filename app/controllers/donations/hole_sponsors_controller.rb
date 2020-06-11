@@ -12,7 +12,7 @@ class Donations::HoleSponsorsController < ApplicationController
 
     if @donation.save
       if @donation.paypal?
-        redirect_to @donation.paypal_url(new_donations_registration_path)
+        redirect_to @donation.paypal_url(successes_path)
       elsif @donation.paying_by_check?
         DonationMailer.with(donation: @donation).thank_you.deliver_later
         DonationMailer.with(donation: @donation).inform_admin.deliver_later
