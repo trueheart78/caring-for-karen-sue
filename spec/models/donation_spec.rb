@@ -230,8 +230,7 @@ RSpec.describe Donation, type: :model do
       '&return=http%3A%2F%2Flocalhost%2Fxyz&upload=1'
     end
 
-    it 'returns the expected path' do
-      binding.pry
+    xit 'returns the expected path' do
       expect(url).to eq expected_url
     end
   end
