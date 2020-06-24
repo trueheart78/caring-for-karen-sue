@@ -20,4 +20,6 @@ Rails.application.routes.draw do
   get 'robots.:format', to: 'robots#index'
 
   root 'welcome#index'
+
+  match '*unmatched', to: 'application#route_not_found', via: :all
 end
