@@ -13,6 +13,14 @@ jobs:
       # Make sure there is a JS runtime available
       - run: sudo apt-get update && sudo apt-get install nodejs
 
+      - run:
+          name: Force Bundler Version
+          command: |
+            sudo gem update --system
+            echo 'export BUNDLER_VERSION=$(cat Gemfile.lock | tail -1 | tr -d " ")' >> $BASH_ENV
+            source $BASH_ENV
+            gem install bundler
+
       # Restore Cached Dependencies
       - type: cache-restore
         name: Restore bundle cache
