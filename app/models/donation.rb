@@ -12,6 +12,9 @@ class Donation < ApplicationRecord
                                      message: 'Amount must be a positive number' }
   validates :payment_type, inclusion: { in: %w[check paypal],
                                         message: 'Payment type must be selected' }
+  validates :quantity, numericality: { only_integer: true,
+                                       greater_than_or_equal_to: 1,
+                                       message: 'Amount must be a positive number' }
 
   def donation?
     selection == 'donation'
@@ -21,6 +24,10 @@ class Donation < ApplicationRecord
     !donation?
   end
 
+  def paypal?
+    payment_type == 'paypal'
+  end
+
   def paying_by_check?
     payment_type == 'check'
   end
@@ -28,6 +35,11 @@ class Donation < ApplicationRecord
   # TODO: change this to reflect the quantity that they selected
   def selected_item
     selection.titleize
+  end
+
+  def paypal_url(return_path)
+    URI.join(Rails.application.secrets.paypal_host,
+             "cgi-bin/webscr?#{paypal_values(return_path).to_query}").to_s
   end
 
   def self.payment_types
@@ -45,4 +57,28 @@ class Donation < ApplicationRecord
 
     'signup'
   end
+
+  def item_num
+    return 1 if selection == 'donation'
+    return 2 if selection == 'registration'
+    return 3 if selection == 'lunch'
+    return 4 if selection == 'hole_sponsor'
+  end
+
+  # rubocop:disable Metrics/MethodLength
+  def paypal_values(return_path)
+    {
+      business: ENV['PAYPAL_MERCHANT_EMAIL'],
+      cmd: '_xclick',
+      upload: 1,
+      return: "#{Rails.application.secrets.app_host}/#{return_path}",
+      invoice: id,
+      amount: amount,
+      item_name: selected_item,
+      item_number: item_num,
+      quantity: quantity,
+      notify_url: "#{Rails.application.secrets.app_host}/hook"
+    }
+  end
+  # rubocop:enable Metrics/MethodLength
 end

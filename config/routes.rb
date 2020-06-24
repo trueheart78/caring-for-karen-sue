@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'donations/registrations', to: 'donations/registrations#new'
   get 'donations/lunches', to: 'donations/lunches#new'
   get 'donations/donations', to: 'donations/donations#new'
+  post 'hook', to: 'successes#hook'
   get 'successes/index', to: 'successes#index'
   get 'successes', to: 'successes#index'
   get 'cancellations/index', to: 'cancellations#index'

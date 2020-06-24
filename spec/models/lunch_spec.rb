@@ -42,4 +42,11 @@ RSpec.describe Lunch, type: :model do
       expect(lunch.cost).to eq 25
     end
   end
+
+  describe '.qty_from_total' do
+    it 'returns the expected amount' do
+      qty = 9
+      expect(lunch.qty_from_total(9 * lunch.cost)).to eq qty
+    end
+  end
 end

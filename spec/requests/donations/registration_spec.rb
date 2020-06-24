@@ -32,10 +32,10 @@ RSpec.describe 'Player Registrations', type: :request do
     context 'when the data is invalid' do
       let(:donation) do
         {
-          name: SecureRandom.hex(5),
-          email: 'valid@email.com',
+          name: '',
+          email: '',
           amount: 0,
-          payment_type: 'check'
+          payment_type: 'none'
         }
       end
 

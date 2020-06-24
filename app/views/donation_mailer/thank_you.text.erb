@@ -3,7 +3,7 @@ You have registered for the CaringForKarenSue.com <%= Event.iteration %> Annual 
 Name: <%= @donation.name %>
 Email: <%= @donation.email %>
 Selected: <%= @donation.selected_item %>
-Amount: $<%= number_with_delimiter(@donation.amount, delimiter: ',') %>
+Amount: $<%= number_with_delimiter(@donation.amount, delimiter: ',') %> x <%= @donation.quantity %>
 Paying By: <%= @donation.payment_type %>
 
 <% if @donation.paying_by_check? %>

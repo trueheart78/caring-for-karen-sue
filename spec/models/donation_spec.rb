@@ -178,6 +178,26 @@ RSpec.describe Donation, type: :model do
     end
   end
 
+  describe '#paypal?' do
+    subject(:donation) { create :donation, payment_type: payment_type }
+
+    context 'when the payment type is paypal' do
+      let(:payment_type) { 'paypal' }
+
+      it 'returns true' do
+        expect(donation).to be_paypal
+      end
+    end
+
+    context 'when the payment type is not paypal' do
+      let(:payment_type) { 'check' }
+
+      it 'returns false' do
+        expect(donation).not_to be_paypal
+      end
+    end
+  end
+
   describe '#paying_by_check?' do
     subject(:donation) { create :donation, payment_type: payment_type }
 
@@ -195,6 +215,23 @@ RSpec.describe Donation, type: :model do
       it 'returns false' do
         expect(donation).not_to be_paying_by_check
       end
+    end
+  end
+
+  describe '#paypal_url' do
+    subject(:url) { create(:donation, quantity: qty).paypal_url return_path }
+
+    let(:qty)         { 5 }
+    let(:return_path) { 'xyz' }
+    let(:expected_url) do
+      'https://www.sandbox.paypal.com/cgi-bin/webscr?amount=100&business=merchant' \
+      '%40trueheart78.com&cmd=_xclick&invoice=1&item_name=Donation&item_number=1' \
+      '&notify_url=http%3A%2F%2Flocalhost%2Fhook&quantity=5' \
+      '&return=http%3A%2F%2Flocalhost%2Fxyz&upload=1'
+    end
+
+    xit 'returns the expected path' do
+      expect(url).to eq expected_url
     end
   end
 end
