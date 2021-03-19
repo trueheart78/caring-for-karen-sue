@@ -9,4 +9,11 @@ RSpec.describe WelcomeController, type: :controller do
       expect(response).to be_successful
     end
   end
+
+  describe 'POST #create' do
+    it 'returns a 404 not found' do
+      post :create, params: { data: 'test' }
+      expect(response).to be_not_found
+    end
+  end
 end
