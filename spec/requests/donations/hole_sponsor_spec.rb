@@ -9,9 +9,9 @@ RSpec.describe 'Hole Sponsors', type: :request do
     context 'when the data is valid' do
       let(:donation) do
         {
-          name: SecureRandom.hex(5),
-          email: 'valid@email.com',
-          amount: 200,
+          name:         SecureRandom.hex(5),
+          email:        'valid@email.com',
+          amount:       200,
           payment_type: 'check'
         }
       end
@@ -32,9 +32,9 @@ RSpec.describe 'Hole Sponsors', type: :request do
     context 'when the data is invalid' do
       let(:donation) do
         {
-          name: SecureRandom.hex(5),
-          email: 'valid@email.com',
-          amount: 0,
+          name:         SecureRandom.hex(5),
+          email:        'valid@email.com',
+          amount:       0,
           payment_type: 'check'
         }
       end

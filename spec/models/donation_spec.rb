@@ -23,7 +23,7 @@ RSpec.describe Donation, type: :model do
       end
     end
 
-    context 'when too short' do
+    context 'when too long' do
       let(:name) { 't' * 51 }
 
       it 'is not valid' do
