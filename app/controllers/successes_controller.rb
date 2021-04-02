@@ -11,10 +11,10 @@ class SuccessesController < ApplicationController
     status = params[:payment_status]
     if status == 'Completed'
       @donation = Donation.find params[:invoice]
-      @donation.update_attributes notification_params: params,
-                                  status:              status,
-                                  transaction_id:      params[:txn_id],
-                                  purchased_at:        Time.now
+      @donation.update notification_params: params,
+                       status:              status,
+                       transaction_id:      params[:txn_id],
+                       purchased_at:        Time.zone.now
 
       DonationMailer.with(donation: @donation).thank_you.deliver_later
       DonationMailer.with(donation: @donation).inform_admin.deliver_later
