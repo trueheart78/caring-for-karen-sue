@@ -5,16 +5,16 @@ class Donation < ApplicationRecord
   # https://api.rubyonrails.org/v5.2/classes/ActiveModel/Validations/ClassMethods.html#method-i-validates
   validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create,
                               message: 'Email address is invalid' }
-  validates :selection, inclusion: { in: %w[donation registration lunch hole_sponsor],
+  validates :selection, inclusion: { in:      %w[donation registration lunch hole_sponsor],
                                      message: 'Selection invalid' }
-  validates :amount, numericality: { only_integer: true,
+  validates :amount, numericality: { only_integer:             true,
                                      greater_than_or_equal_to: 1,
-                                     message: 'Amount must be a positive number' }
-  validates :payment_type, inclusion: { in: %w[check paypal],
+                                     message:                  'Amount must be a positive number' }
+  validates :payment_type, inclusion: { in:      %w[check paypal],
                                         message: 'Payment type must be selected' }
-  validates :quantity, numericality: { only_integer: true,
+  validates :quantity, numericality: { only_integer:             true,
                                        greater_than_or_equal_to: 1,
-                                       message: 'Amount must be a positive number' }
+                                       message:                  'Amount must be a positive number' }
 
   def donation?
     selection == 'donation'
@@ -65,20 +65,18 @@ class Donation < ApplicationRecord
     return 4 if selection == 'hole_sponsor'
   end
 
-  # rubocop:disable Metrics/MethodLength
   def paypal_values(return_path)
     {
-      business: ENV['PAYPAL_MERCHANT_EMAIL'],
-      cmd: '_xclick',
-      upload: 1,
-      return: "#{Rails.application.secrets.app_host}/#{return_path}",
-      invoice: id,
-      amount: amount,
-      item_name: selected_item,
+      business:    ENV['PAYPAL_MERCHANT_EMAIL'],
+      cmd:         '_xclick',
+      upload:      1,
+      return:      "#{Rails.application.secrets.app_host}/#{return_path}",
+      invoice:     id,
+      amount:      amount,
+      item_name:   selected_item,
       item_number: item_num,
-      quantity: quantity,
-      notify_url: "#{Rails.application.secrets.app_host}/hook"
+      quantity:    quantity,
+      notify_url:  "#{Rails.application.secrets.app_host}/hook"
     }
   end
-  # rubocop:enable Metrics/MethodLength
 end
