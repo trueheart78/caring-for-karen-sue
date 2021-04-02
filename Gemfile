@@ -30,8 +30,8 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'pry', '~> 0.10.3'
   gem 'rspec-rails', '~> 3.4'
-  gem 'rubocop'
-  gem 'rubocop-rspec'
+  gem 'rubocop', require: false
+  gem 'rubocop-rspec', require: false
   gem 'spring'
   gem 'sqlite3', '~> 1.3', '>= 1.3.11'
 end
