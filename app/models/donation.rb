@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Donation < ApplicationRecord
+  # rubocop:disable Layout/LineLength
   validates :name, length: { minimum: 2, maximum: 50, message: 'Name is invalid' }
   # https://api.rubyonrails.org/v5.2/classes/ActiveModel/Validations/ClassMethods.html#method-i-validates
   validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create,
@@ -15,6 +16,7 @@ class Donation < ApplicationRecord
   validates :quantity, numericality: { only_integer:             true,
                                        greater_than_or_equal_to: 1,
                                        message:                  'Amount must be a positive number' }
+  # rubocop:enable Layout/LineLength
 
   def donation?
     selection == 'donation'
