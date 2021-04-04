@@ -34,7 +34,7 @@ group :development, :test do
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', require: false
   gem 'spring'
-  gem 'sqlite3', '~> 1.3', '>= 1.3.11'
+  gem 'sqlite3', '~> 1.4.2'
 end
 
 group :test do
