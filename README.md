@@ -2,7 +2,7 @@
 
 [![Circle CI](https://circleci.com/gh/trueheart78/CaringForKarenSue-Rails.svg?style=shield)](https://circleci.com/gh/trueheart78/CaringForKarenSue-Rails)
 
-Ruby 2.6 and Rails 5.2, spec'd out with RSpec 3.
+Ruby 2.7 and Rails 5.2, spec'd out with RSpec 3.
 
 ## Environment Variables
 
