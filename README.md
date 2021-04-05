@@ -1,6 +1,6 @@
-# CaringForKarenSue, Rails 5.2 Edition
+# Caring For Karen Sue
 
-[![Circle CI](https://circleci.com/gh/trueheart78/CaringForKarenSue-Rails.svg?style=shield)](https://circleci.com/gh/trueheart78/CaringForKarenSue-Rails)
+[![Circle CI](https://circleci.com/gh/trueheart78/caring-for-karen-sue.svg?style=shield)](https://circleci.com/gh/trueheart78/caring-for-karen-sue)
 
 Ruby 2.6 and Rails 5.2, spec'd out with RSpec 3.
 
