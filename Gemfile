@@ -19,6 +19,7 @@ gem 'skylight'
 gem 'sparkpost_rails'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
+
 group :development do
   gem 'rails_real_favicon'
   gem 'web-console', '~> 2.0'
@@ -39,7 +40,6 @@ end
 
 group :test do
   gem 'simplecov', require: false
-  gem 'simplecov-rcov', require: false
 end
 
 group :production do
