@@ -218,8 +218,6 @@ GEM
       docile (~> 1.1)
       simplecov-html (~> 0.11.0)
     simplecov-html (0.11.0)
-    simplecov-rcov (0.2.3)
-      simplecov (>= 0.4.1)
     skylight (4.2.1)
       skylight-core (= 4.2.1)
     skylight-core (4.2.1)
@@ -287,7 +285,6 @@ DEPENDENCIES
   rubocop-rspec
   sass-rails (~> 5.0)
   simplecov
-  simplecov-rcov
   skylight
   sparkpost_rails
   spring
