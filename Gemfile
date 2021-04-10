@@ -2,8 +2,8 @@
 
 source 'https://rubygems.org'
 
-# Heroku needs this. Update .ruby-version for development
-ruby '2.7.2'
+# Heroku needs this. Keep this in sync with .ruby-version, .rubocop.yml, and .circleci/config.yml
+ruby '2.7.3'
 
 gem 'bootsnap'
 gem 'coffee-rails', '~> 4.2.0'
