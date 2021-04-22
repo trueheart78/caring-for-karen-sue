@@ -9,8 +9,10 @@ gem 'bootsnap'
 gem 'coffee-rails', '~> 4.2.0'
 gem 'font-awesome-rails', '~> 4.7'
 gem 'jquery-rails'
+gem 'nokogiri', '>= 1.7.1'
 gem 'oj'
 gem 'pie-rails', '~>1.1' # progressive internet explorer
+gem 'puma'
 gem 'rails', '~> 5.2.5'
 gem 'rails-controller-testing'
 gem 'rollbar', '~> 2.12'
@@ -44,7 +46,4 @@ end
 
 group :production do
   gem 'pg', '~> 0.18.4'
-  gem 'rails_12factor', '~> 0.0.3'
 end
-gem 'nokogiri', '>= 1.7.1'
-gem 'puma'
