@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
-  factory :sponsor do
-  end
+  factory :sponsor
 end

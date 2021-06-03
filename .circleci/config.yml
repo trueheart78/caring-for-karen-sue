@@ -4,7 +4,7 @@ jobs:
   build:
     working_directory: ~/CaringForKarenSue-Rails
     docker:
-      - image: circleci/ruby:2.6.6
+      - image: circleci/ruby:2.7.3
         environment:
           RAILS_ENV: test
     steps:
@@ -27,7 +27,11 @@ jobs:
         key: CaringForKarenSue-Rails-{{ checksum "Gemfile.lock" }}
 
       # Bundle install dependencies
-      - run: bundle install --path vendor/bundle
+      - run:
+          name: Bundle Install
+          command: |
+            bundle config set --local path 'vendor/bundle'
+            bundle install
 
       # Cache Dependencies
       - type: cache-save
