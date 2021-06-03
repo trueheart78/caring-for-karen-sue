@@ -14,7 +14,7 @@ class Event
     end
 
     def date
-      'Saturday, September 12th, 2020'
+      'Saturday, September 11th, 2021'
     end
 
     def time
@@ -22,7 +22,7 @@ class Event
     end
 
     def check_deadline
-      'Wednesday, September 2nd, 2020'
+      'Wednesday, September 1st, 2021'
     end
 
     def iteration
