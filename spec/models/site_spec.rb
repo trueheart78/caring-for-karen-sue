@@ -18,7 +18,7 @@ RSpec.describe Site, type: :model do
   end
 
   it 'has the expected facebook_url' do
-    expect(site.facebook_url).to eq 'http://facebook.com/caringforkarensue'
+    expect(site.facebook_url).to eq 'https://facebook.com/caringforkarensue'
   end
 
   describe '.description' do

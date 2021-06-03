@@ -15,7 +15,7 @@ class Site
     end
 
     def facebook_url
-      'http://facebook.com/caringforkarensue'
+      'https://facebook.com/caringforkarensue'
     end
 
     def description(iteration:)
