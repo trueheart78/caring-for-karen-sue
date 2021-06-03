@@ -1,10 +1,10 @@
 <footer id="footer">
   <ul class="icons">
     <li>
-    <a href="http://facebook.com/caringforkarensue" class="icon fa-facebook" target="_blank"><span class="label">Facebook</span></a></li>
+      <a href="<%= Site.facebook_url %>" class="icon fa-facebook" target="_blank"><span class="label">Facebook</span></a></li>
   </ul>
   <ul class="copyright">
-    <li>&copy; Caring For Karen Sue. All rights reserved.</li>
+    <li>&copy; <%= Site.title %>. All rights reserved.</li>
     <li>In honor of Karen Danielson</li>
     <li>All proceeds go to the
       <%= link_to current_charity.name, current_charity.url, target: '_blank' %>
