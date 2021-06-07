@@ -13,7 +13,9 @@ SPARKPOST_API_KEY
 SKYLIGHT_AUTHENTICATION
 ```
 
-The stock `.env` file includes the basics. You should create local `.env.local` and `.env.test` files, that include real values.
+## Dotenv Files
+
+The stock `.env` file includes the basics. You should create both an `.env.local` and an `.env.test` file, that include real values.
 
 ```sh
 cp .env .env.local
@@ -35,3 +37,11 @@ You can skip the `simplecov` code coverage by using the `SKIP_COVERAGE` environm
 ```sh
 SKIP_COVERAGE=true bundle exec rake spec
 ```
+
+## Heroku Deployment
+
+Currently, Heroku deployment is automatic upon a `main` branch commit passing CI.
+
+### Database Migrations
+
+These have been automated on deploy, using the `release` section of the `Procfile`.
