@@ -4,7 +4,7 @@ jobs:
   build:
     working_directory: ~/CaringForKarenSue-Rails
     docker:
-      - image: circleci/ruby:2.7.3
+      - image: circleci/ruby:2.7.4
         environment:
           RAILS_ENV: test
     steps:
