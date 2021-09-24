@@ -6,7 +6,7 @@ source 'https://rubygems.org'
 ruby '2.7.4'
 
 gem 'bootsnap'
-gem 'coffee-rails', '~> 4.2.0'
+gem 'coffee-rails', '~> 5.0'
 gem 'font-awesome-rails', '~> 4.7'
 gem 'jquery-rails'
 gem 'nokogiri', '>= 1.7.1'
