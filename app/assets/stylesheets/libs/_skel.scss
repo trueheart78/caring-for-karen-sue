@@ -4,7 +4,7 @@
 
 	/// Breakpoints.
 	/// @var {list}
-  $breakpoints: null; /* Required to allow globalization */
+	$breakpoints: null; /* Required to allow globalization */
 	$breakpoints: () !global;
 
 	/// Vendor prefixes.
