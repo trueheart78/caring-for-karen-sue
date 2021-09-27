@@ -38,7 +38,7 @@ First, boot the server.
 bundle exec rails s
 ```
 
-Then head to (http://localhost:3000/rails/mailers)[mailers].
+Then head to [http://localhost:3000/rails/mailers][mailers].
 
 ## Code Coverage
 
