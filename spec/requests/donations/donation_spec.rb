@@ -25,7 +25,7 @@ RSpec.describe 'Basic Donations', type: :request do
       it 'sends emails' do
         expect do
           post endpoint, params: { donation: donation }
-        end.to have_enqueued_job.twice.on_queue('mailers')
+        end.to have_enqueued_job.twice.on_queue('default')
       end
     end
 
@@ -48,7 +48,7 @@ RSpec.describe 'Basic Donations', type: :request do
       it 'does not send emails' do
         expect do
           post endpoint, params: { donation: donation }
-        end.not_to have_enqueued_job.on_queue('mailers')
+        end.not_to have_enqueued_job.on_queue('default')
       end
     end
   end
