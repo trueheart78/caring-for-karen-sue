@@ -13,7 +13,7 @@ gem 'nokogiri', '>= 1.7.1'
 gem 'oj'
 gem 'pie-rails', '~>1.1' # progressive internet explorer
 gem 'puma'
-gem 'rails', '~> 6.0.4'
+gem 'rails', '~> 6.1.4'
 gem 'rails-controller-testing'
 gem 'rollbar', '~> 2.12'
 gem 'sass-rails', '~> 6.0'
@@ -33,7 +33,7 @@ group :development, :test do
   gem 'dotenv-rails', '~> 2.2'
   gem 'factory_bot_rails'
   gem 'pry', '~> 0.10.3'
-  gem 'rspec-rails', '~> 3.4'
+  gem 'rspec-rails', '~> 5.0'
   gem 'rubocop', require: false
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', require: false
