@@ -1,5 +1,5 @@
 <ul>
-  <% donation.errors.each do |k, v| %>
-    <li><%= v %></li>
+  <% donation.errors.each do |error| %>
+    <li><%= error.message %></li>
   <% end %>
 </ul>
