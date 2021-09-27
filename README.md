@@ -24,11 +24,21 @@ vim .env.local
 
 ## Running Specs
 
-RSpec files exist in `spec/`
+RSpec files exist in `spec/`.
 
 ```sh
 bundle exec rake spec
 ```
+
+## Viewing Mailers
+
+First, boot the server.
+
+```sh
+bundle exec rails s
+```
+
+Then head to (http://localhost:3000/rails/mailers)[mailers].
 
 ## Code Coverage
 
@@ -45,3 +55,5 @@ Currently, Heroku deployment is automatic upon a `main` branch commit passing CI
 ### Database Migrations
 
 These have been automated on deploy, using the `release` section of the `Procfile`.
+
+[mailers]: http://localhost:3000/rails/mailers
