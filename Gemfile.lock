@@ -133,7 +133,7 @@ GEM
     parallel (1.20.1)
     parser (3.0.2.0)
       ast (~> 2.4.1)
-    pg (0.18.4)
+    pg (1.2.3)
     pie-rails (1.1.0)
     pry (0.10.4)
       coderay (~> 1.1.0)
@@ -288,7 +288,7 @@ DEPENDENCIES
   jquery-rails
   nokogiri (>= 1.7.1)
   oj
-  pg (~> 0.18.4)
+  pg (~> 1.2.3)
   pie-rails (~> 1.1)
   pry (~> 0.10.3)
   puma
