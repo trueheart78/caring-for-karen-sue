@@ -69,7 +69,7 @@ class Donation < ApplicationRecord
 
   def paypal_values(return_path)
     {
-      business:    ENV['PAYPAL_MERCHANT_EMAIL'],
+      business:    ENV.fetch('PAYPAL_MERCHANT_EMAIL', nil),
       cmd:         '_xclick',
       upload:      1,
       return:      "#{Rails.application.secrets.app_host}/#{return_path}",

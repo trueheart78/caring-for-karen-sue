@@ -225,9 +225,9 @@ RSpec.describe Donation, type: :model do
     let(:return_path) { 'xyz' }
     let(:expected_url) do
       'https://www.sandbox.paypal.com/cgi-bin/webscr?amount=100&business=merchant' \
-      '%40trueheart78.com&cmd=_xclick&invoice=1&item_name=Donation&item_number=1' \
-      '&notify_url=http%3A%2F%2Flocalhost%2Fhook&quantity=5' \
-      '&return=http%3A%2F%2Flocalhost%2Fxyz&upload=1'
+        '%40trueheart78.com&cmd=_xclick&invoice=1&item_name=Donation&item_number=1' \
+        '&notify_url=http%3A%2F%2Flocalhost%2Fhook&quantity=5' \
+        '&return=http%3A%2F%2Flocalhost%2Fxyz&upload=1'
     end
 
     xit 'returns the expected path' do
