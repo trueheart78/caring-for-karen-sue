@@ -58,14 +58,14 @@ RSpec.describe ApplicationHelper, type: :helper do
   describe '#google_analytics_key' do
     it 'returns the ENV["GOOGLE_ANALYTICS_KEY"] value' do
       ENV['GOOGLE_ANALYTICS_KEY'] = SecureRandom.hex 10
-      expect(helper.google_analytics_key).to eq ENV['GOOGLE_ANALYTICS_KEY']
+      expect(helper.google_analytics_key).to eq ENV.fetch('GOOGLE_ANALYTICS_KEY', nil)
     end
   end
 
   describe '#google_analytics_site' do
     it 'returns the ENV["GOOGLE_ANALYTICS_SITE"] value' do
       ENV['GOOGLE_ANALYTICS_SITE'] = SecureRandom.hex 10
-      expect(helper.google_analytics_site).to eq ENV['GOOGLE_ANALYTICS_SITE']
+      expect(helper.google_analytics_site).to eq ENV.fetch('GOOGLE_ANALYTICS_SITE', nil)
     end
   end
 end

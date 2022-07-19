@@ -10,10 +10,10 @@ module ApplicationHelper
   end
 
   def google_analytics_key
-    ENV['GOOGLE_ANALYTICS_KEY']
+    ENV.fetch('GOOGLE_ANALYTICS_KEY', nil)
   end
 
   def google_analytics_site
-    ENV['GOOGLE_ANALYTICS_SITE']
+    ENV.fetch('GOOGLE_ANALYTICS_SITE', nil)
   end
 end
