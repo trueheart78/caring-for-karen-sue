@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe 'Dates', type: :feature do
+RSpec.describe 'Dates' do
   it 'About page has the current iteration' do
     visit about_path
     expect(page.text).to include('eleventh')
@@ -10,7 +10,7 @@ RSpec.describe 'Dates', type: :feature do
 
   it 'Homepage banner has the current iteration' do
     visit root_path
-    banner = page.find '#banner'
+    banner = page.find_by_id 'banner'
     expect(banner).to be_visible
     expect(banner.text).to include('11th')
   end

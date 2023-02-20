@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe CancellationsController, type: :controller do
+RSpec.describe CancellationsController do
   describe 'GET #index' do
     it 'returns http success' do
       get :index

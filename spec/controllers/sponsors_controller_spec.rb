@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe SponsorsController, type: :controller do
+RSpec.describe SponsorsController do
   describe 'GET #index' do
     it 'returns http success' do
       get :index

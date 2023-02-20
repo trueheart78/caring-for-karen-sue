@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe RobotsController, type: :controller do
+RSpec.describe RobotsController do
   describe 'GET #index, format: txt' do
     it 'returns http success' do
       get :index, format: :txt

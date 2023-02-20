@@ -12,6 +12,6 @@ require 'rails_helper'
 #     end
 #   end
 # end
-RSpec.describe DonationsHelper, type: :helper do
+RSpec.describe DonationsHelper do
   pending "add some examples to (or delete) #{__FILE__}"
 end

@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe 'About Page', type: :feature do
+RSpec.describe 'About Page' do
   before do
     visit about_path
   end

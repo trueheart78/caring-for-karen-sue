@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe HoleSponsor, type: :model do
+RSpec.describe HoleSponsor do
   subject(:hole_sponsor) { described_class }
 
   describe '.find' do

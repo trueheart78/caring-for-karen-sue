@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe 'Basic Donations', type: :request do
+RSpec.describe 'Basic Donations' do
   describe 'creating a new donation' do
     let(:endpoint) { '/donations/donations' }
 

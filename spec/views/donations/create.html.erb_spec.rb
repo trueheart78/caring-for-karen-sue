@@ -2,6 +2,6 @@
 
 require 'rails_helper'
 
-RSpec.describe 'donations/create.html.erb', type: :view do
+RSpec.describe 'donations/create.html.erb' do
   pending "add some examples to (or delete) #{__FILE__}"
 end

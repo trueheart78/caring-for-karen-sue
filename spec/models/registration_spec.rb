@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe Registration, type: :model do
+RSpec.describe Registration do
   subject(:registration) { described_class }
 
   describe '.find' do

@@ -12,7 +12,7 @@ require 'rails_helper'
 #     end
 #   end
 # end
-RSpec.describe ApplicationHelper, type: :helper do
+RSpec.describe ApplicationHelper do
   describe '#current_charity' do
     it 'is set to the expected class' do
       expect(helper.current_charity).to be Charity::ShilohHouse
@@ -26,7 +26,7 @@ RSpec.describe ApplicationHelper, type: :helper do
       it 'returns true' do
         ENV['GOOGLE_ANALYTICS_KEY'] = 'x'
         ENV['GOOGLE_ANALYTICS_SITE'] = 'y'
-        expect(analytics).to eq true
+        expect(analytics).to be true
       end
     end
 
@@ -34,7 +34,7 @@ RSpec.describe ApplicationHelper, type: :helper do
       it 'returns false' do
         ENV['GOOGLE_ANALYTICS_KEY'] = ''
         ENV['GOOGLE_ANALYTICS_SITE'] = 'y'
-        expect(analytics).to eq false
+        expect(analytics).to be false
       end
     end
 
@@ -42,7 +42,7 @@ RSpec.describe ApplicationHelper, type: :helper do
       it 'returns false' do
         ENV['GOOGLE_ANALYTICS_KEY'] = 'x'
         ENV['GOOGLE_ANALYTICS_SITE'] = ''
-        expect(analytics).to eq false
+        expect(analytics).to be false
       end
     end
 
@@ -50,7 +50,7 @@ RSpec.describe ApplicationHelper, type: :helper do
       it 'returns false' do
         ENV['GOOGLE_ANALYTICS_KEY'] = ''
         ENV['GOOGLE_ANALYTICS_SITE'] = ''
-        expect(analytics).to eq false
+        expect(analytics).to be false
       end
     end
   end

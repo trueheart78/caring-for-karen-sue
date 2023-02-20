@@ -4,7 +4,7 @@ jobs:
   build:
     working_directory: ~/CaringForKarenSue-Rails
     docker:
-      - image: cimg/ruby:2.7
+      - image: cimg/ruby:3.0
         environment:
           RAILS_ENV: test
     steps:
@@ -14,12 +14,9 @@ jobs:
       - run: sudo apt-get update && sudo apt-get install nodejs
 
       - run:
-          name: Force Bundler Version
+          name: Update the RubyGems system software
           command: |
-            sudo gem update --system
-            echo 'export BUNDLER_VERSION=$(cat Gemfile.lock | tail -1 | tr -d " ")' >> $BASH_ENV
-            source $BASH_ENV
-            gem install bundler
+            sudo gem update --system --no-document
 
       # Restore Cached Dependencies
       - type: cache-restore

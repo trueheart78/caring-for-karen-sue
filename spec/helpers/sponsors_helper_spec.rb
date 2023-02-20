@@ -12,6 +12,6 @@ require 'rails_helper'
 #     end
 #   end
 # end
-RSpec.describe SponsorsHelper, type: :helper do
+RSpec.describe SponsorsHelper do
   pending "add some examples to (or delete) #{__FILE__}"
 end

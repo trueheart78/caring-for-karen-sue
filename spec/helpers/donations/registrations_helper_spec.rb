@@ -12,7 +12,7 @@ require 'rails_helper'
 #     end
 #   end
 # end
-RSpec.describe Donations::RegistrationsHelper, type: :helper do
+RSpec.describe Donations::RegistrationsHelper do
   describe '#registration_options' do
     let(:expected_array) do
       [

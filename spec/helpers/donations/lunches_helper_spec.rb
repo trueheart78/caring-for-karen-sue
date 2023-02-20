@@ -12,7 +12,7 @@ require 'rails_helper'
 #     end
 #   end
 # end
-RSpec.describe Donations::LunchesHelper, type: :helper do
+RSpec.describe Donations::LunchesHelper do
   describe '#lunch_options' do
     let(:expected_array) do
       [

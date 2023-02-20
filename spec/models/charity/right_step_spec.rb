@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe Charity::RightStep, type: :model do
+RSpec.describe Charity::RightStep do
   subject(:charity) { described_class }
 
   describe '.name' do
