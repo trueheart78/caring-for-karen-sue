@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 
 # Heroku needs this. Keep this in sync with .ruby-version, .rubocop.yml, and .circleci/config.yml
-ruby '~> 3.0.0'
+ruby '~> 3.1.0'
 
 gem 'bootsnap'
 gem 'coffee-rails', '~> 5.0'
