@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe Charity::ShilohHouse, type: :model do
+RSpec.describe Charity::ShilohHouse do
   subject(:charity) { described_class }
 
   describe '.name' do

@@ -2,6 +2,6 @@
 
 require 'rails_helper'
 
-RSpec.describe 'sponsors/index.html.erb', type: :view do
+RSpec.describe 'sponsors/index.html.erb' do
   pending "add some examples to (or delete) #{__FILE__}"
 end

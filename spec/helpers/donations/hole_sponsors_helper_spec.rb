@@ -12,6 +12,6 @@ require 'rails_helper'
 #     end
 #   end
 # end
-RSpec.describe Donations::HoleSponsorsHelper, type: :helper do
+RSpec.describe Donations::HoleSponsorsHelper do
   pending "add some examples to (or delete) #{__FILE__}"
 end

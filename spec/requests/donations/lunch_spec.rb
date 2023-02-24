@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe 'Lunch Registrations', type: :request do
+RSpec.describe 'Lunch Registrations' do
   describe 'creating a new lunch registration' do
     let(:endpoint) { '/donations/lunches' }
 

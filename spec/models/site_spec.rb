@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe Site, type: :model do
+RSpec.describe Site do
   subject(:site) { described_class }
 
   it 'has the expected title' do
@@ -52,8 +52,8 @@ RSpec.describe Site, type: :model do
     end
 
     it 'exists on the file system' do
-      path = Rails.root.join 'public', site.image
-      expect(File.exist?(path)).to eq true
+      path = Rails.public_path.join(site.image)
+      expect(File.exist?(path)).to be true
     end
   end
 end

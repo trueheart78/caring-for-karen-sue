@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe Donations::DonationsController, type: :controller do
+RSpec.describe Donations::DonationsController do
   describe 'GET #new' do
     it 'returns http success' do
       get :new

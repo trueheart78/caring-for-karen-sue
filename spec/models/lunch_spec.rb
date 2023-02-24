@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe Lunch, type: :model do
+RSpec.describe Lunch do
   subject(:lunch) { described_class }
 
   describe '.find' do

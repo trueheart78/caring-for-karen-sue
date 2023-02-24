@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe 'Hole Sponsors', type: :request do
+RSpec.describe 'Hole Sponsors' do
   describe 'creating a new hole sponsor' do
     let(:endpoint) { '/donations/hole_sponsors' }
 

@@ -1,9 +1,11 @@
-# This file is copied to spec/ when you run 'rails generate rspec:install'
+# frozen_string_literal: true
+
 ENV['RAILS_ENV'] ||= 'test'
-require "support/simplecov"
-require File.expand_path('../../config/environment', __FILE__)
+
+require 'support/simplecov'
+require File.expand_path('../config/environment', __dir__)
 # Prevent database truncation if the environment is production
-abort("The Rails environment is not running in test mode!") unless Rails.env.test?
+abort('The Rails environment is not running in test mode!') unless Rails.env.test?
 require 'spec_helper'
 require 'rspec/rails'
 
@@ -19,7 +21,7 @@ ActiveJob::Base.queue_adapter = :test
 
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
-  config.fixture_path = "#{::Rails.root}/spec/fixtures"
+  config.fixture_path = Rails.root.join '/spec/fixtures'
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false

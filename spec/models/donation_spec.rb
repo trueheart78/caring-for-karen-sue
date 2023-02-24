@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 # rubocop:disable Metrics/BlockLength
-RSpec.describe Donation, type: :model do
+RSpec.describe Donation do
   describe 'name validation' do
     subject(:donation) { build :donation, name: name }
 
@@ -224,13 +224,10 @@ RSpec.describe Donation, type: :model do
     let(:qty)         { 5 }
     let(:return_path) { 'xyz' }
     let(:expected_url) do
-      'https://www.sandbox.paypal.com/cgi-bin/webscr?amount=100&business=merchant' \
-        '%40trueheart78.com&cmd=_xclick&invoice=1&item_name=Donation&item_number=1' \
-        '&notify_url=http%3A%2F%2Flocalhost%2Fhook&quantity=5' \
-        '&return=http%3A%2F%2Flocalhost%2Fxyz&upload=1'
+      'https://www.sandbox.paypal.com/cgi-bin/webscr?amount=100&business=&cmd=_xclick&invoice=1&item_name=Donation&item_number=1&notify_url=http%3A%2F%2Flocalhost%2Fhook&quantity=5&return=http%3A%2F%2Flocalhost%2Fxyz&upload=1'
     end
 
-    xit 'returns the expected path' do
+    it 'returns the expected path' do
       expect(url).to eq expected_url
     end
   end

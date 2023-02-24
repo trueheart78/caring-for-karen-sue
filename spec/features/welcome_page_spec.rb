@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe 'Welcome Page', type: :feature do
+RSpec.describe 'Welcome Page' do
   before do
     visit root_path
   end

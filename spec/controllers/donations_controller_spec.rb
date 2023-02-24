@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe DonationsController, type: :controller do
+RSpec.describe DonationsController do
   describe 'GET #index' do
     it 'returns http success' do
       get :index

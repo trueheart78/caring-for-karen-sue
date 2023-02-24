@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require 'rails_helper'
 
-describe 'Rubocop Analysis' do
+RSpec.describe 'Rubocop Analysis' do
   let(:report) { `rubocop` }
 
   it 'Has no offenses' do

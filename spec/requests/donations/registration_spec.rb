@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe 'Player Registrations', type: :request do
+RSpec.describe 'Player Registrations' do
   describe 'creating a new player registration' do
     let(:endpoint) { '/donations/registrations' }
 

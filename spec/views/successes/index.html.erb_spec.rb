@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe 'successes/index.html.erb', type: :view do
+RSpec.describe 'successes/index.html.erb' do
   describe 'with a notification' do
     let(:notification) { SecureRandom.hex 20 }
 
