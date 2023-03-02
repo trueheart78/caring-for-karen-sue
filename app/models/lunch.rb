@@ -11,7 +11,7 @@ class Lunch
     def all
       {}.tap do |h|
         (1..10).each do |n|
-          plural = n > 1 ? 'es' : ''
+          plural = (n > 1) ? "es" : ""
           h[n * cost] = "#{n} lunch#{plural}"
         end
       end

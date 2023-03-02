@@ -3,7 +3,7 @@
 class Event
   class << self
     def venue
-      'Applewood Golf Course'
+      "Applewood Golf Course"
     end
 
     def full_address
@@ -14,45 +14,45 @@ class Event
     end
 
     def date
-      'Saturday, September 11th, 2021'
+      "Saturday, September 11th, 2021"
     end
 
     def time
-      '7:30am Shotgun Start'
+      "7:30am Shotgun Start"
     end
 
     def check_deadline
-      'Wednesday, September 1st, 2021'
+      "Wednesday, September 1st, 2021"
     end
 
     def iteration
-      '11th'
+      "11th"
     end
 
     def google_maps_url
-      'https://maps.google.com/maps?q=Applewood+Golf+Course,+W+32nd+Ave,+Golden,+CO&hl=en&ll=39.76489,-105.156605&spn=0.010177,0.020084&sll=39.762611,-105.157246&sspn=0.010177,0.020084&oq=apple14001+W+32nd+Ave,+Golden,+CO&t=m&z=16&iwloc=A'
+      "https://maps.google.com/maps?q=Applewood+Golf+Course,+W+32nd+Ave,+Golden,+CO&hl=en&ll=39.76489,-105.156605&spn=0.010177,0.020084&sll=39.762611,-105.157246&sspn=0.010177,0.020084&oq=apple14001+W+32nd+Ave,+Golden,+CO&t=m&z=16&iwloc=A"
     end
 
     def website
-      'https://www.applewoodgc.com/'
+      "https://www.applewoodgc.com/"
     end
 
     private
 
     def address
-      '14001 W. 32nd Avenue'
+      "14001 W. 32nd Avenue"
     end
 
     def city
-      'Golden'
+      "Golden"
     end
 
     def state
-      'CO'
+      "CO"
     end
 
     def zip
-      '80401'
+      "80401"
     end
   end
 end

@@ -5,22 +5,22 @@ Rails.application.routes.draw do
     resources :lunches, only: [:new, :create]
     resources :donations, only: [:new, :create]
   end
-  get 'donations/hole_sponsors', to: 'donations/hole_sponsors#new'
-  get 'donations/registrations', to: 'donations/registrations#new'
-  get 'donations/lunches', to: 'donations/lunches#new'
-  get 'donations/donations', to: 'donations/donations#new'
-  post 'hook', to: 'successes#hook'
-  get 'successes/index', to: 'successes#index'
-  get 'successes', to: 'successes#index'
-  get 'cancellations/index', to: 'cancellations#index'
-  get 'cancellations', to: 'cancellations#index'
+  get "donations/hole_sponsors", to: "donations/hole_sponsors#new"
+  get "donations/registrations", to: "donations/registrations#new"
+  get "donations/lunches", to: "donations/lunches#new"
+  get "donations/donations", to: "donations/donations#new"
+  post "hook", to: "successes#hook"
+  get "successes/index", to: "successes#index"
+  get "successes", to: "successes#index"
+  get "cancellations/index", to: "cancellations#index"
+  get "cancellations", to: "cancellations#index"
   resources :donations, only: [:index]
-  get 'about', to: 'about#index'
-  get 'sponsors', to: 'sponsors#index'
-  get 'robots.:format', to: 'robots#index'
+  get "about", to: "about#index"
+  get "sponsors", to: "sponsors#index"
+  get "robots.:format", to: "robots#index"
 
-  root 'welcome#index'
+  root "welcome#index"
 
-  post '/', to: 'welcome#create'
-  match '*unmatched', to: 'application#route_not_found', via: :all
+  post "/", to: "welcome#create"
+  match "*unmatched", to: "application#route_not_found", via: :all
 end

@@ -1,6 +1,6 @@
-# Caring For Karen Sue [![Circle CI](https://circleci.com/gh/trueheart78/caring-for-karen-sue.svg?style=shield)](https://circleci.com/gh/trueheart78/caring-for-karen-sue)
+# Caring For Karen Sue [![Circle CI](https://circleci.com/gh/trueheart78/caring-for-karen-sue.svg?style=shield)](https://circleci.com/gh/trueheart78/caring-for-karen-sue) [![Ruby Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://github.com/testdouble/standard)
 
-Ruby 2.7 and Rails 6.1, spec'd out with RSpec 5.
+Ruby 3.1 and Rails 6.1
 
 ## Environment Variables
 
@@ -27,7 +27,7 @@ vim .env.local
 RSpec files exist in `spec/`.
 
 ```sh
-bundle exec rake spec
+bundle exec rspec
 ```
 
 ## Viewing Mailers

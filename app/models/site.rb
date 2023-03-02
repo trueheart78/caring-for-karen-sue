@@ -3,25 +3,25 @@
 class Site
   class << self
     def title
-      'Caring for Karen Sue'
+      "Caring for Karen Sue"
     end
 
     def website
-      'CaringForKarenSue.com'
+      "CaringForKarenSue.com"
     end
 
     def url
-      'https://www.caringforkarensue.com'
+      "https://www.caringforkarensue.com"
     end
 
     def facebook_url
-      'https://facebook.com/caringforkarensue'
+      "https://facebook.com/caringforkarensue"
     end
 
     def description(iteration:)
       [
         "Come register for the #{iteration} Annual Golf Classic, ",
-        'a four man best ball-scramble type tournament.'
+        "a four man best ball-scramble type tournament."
       ].join
     end
 
@@ -30,7 +30,7 @@ class Site
     end
 
     def image
-      'images/gloves.png'
+      "images/gloves.png"
     end
   end
 end

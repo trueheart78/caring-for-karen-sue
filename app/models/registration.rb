@@ -11,7 +11,7 @@ class Registration
     def all
       {}.tap do |h|
         (1..10).each do |n|
-          plural = n > 1 ? 's' : ''
+          plural = (n > 1) ? "s" : ""
           h[n * cost] = "#{n} player#{plural}"
         end
       end

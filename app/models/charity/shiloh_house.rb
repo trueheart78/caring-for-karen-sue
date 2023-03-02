@@ -3,15 +3,15 @@
 class Charity::ShilohHouse
   class << self
     def name
-      'Shiloh House'
+      "Shiloh House"
     end
 
     def url
-      'https://www.shilohhouse.org'
+      "https://www.shilohhouse.org"
     end
 
     def logo
-      'shiloh-house.png'
+      "shiloh-house.png"
     end
 
     def copy

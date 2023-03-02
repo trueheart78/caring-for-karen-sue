@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'rails_helper'
+require "rails_helper"
 
 # Specs in this file have access to a helper object that includes
 # the DonationsHelper. For example:
@@ -13,59 +13,59 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe ApplicationHelper do
-  describe '#current_charity' do
-    it 'is set to the expected class' do
+  describe "#current_charity" do
+    it "is set to the expected class" do
       expect(helper.current_charity).to be Charity::ShilohHouse
     end
   end
 
-  describe '#google_analytics?' do
+  describe "#google_analytics?" do
     subject(:analytics) { helper.google_analytics? }
 
-    context 'when both env vars are set' do
-      it 'returns true' do
-        ENV['GOOGLE_ANALYTICS_KEY'] = 'x'
-        ENV['GOOGLE_ANALYTICS_SITE'] = 'y'
+    context "when both env vars are set" do
+      it "returns true" do
+        ENV["GOOGLE_ANALYTICS_KEY"] = "x"
+        ENV["GOOGLE_ANALYTICS_SITE"] = "y"
         expect(analytics).to be true
       end
     end
 
-    context 'when the key env var is not set' do
-      it 'returns false' do
-        ENV['GOOGLE_ANALYTICS_KEY'] = ''
-        ENV['GOOGLE_ANALYTICS_SITE'] = 'y'
+    context "when the key env var is not set" do
+      it "returns false" do
+        ENV["GOOGLE_ANALYTICS_KEY"] = ""
+        ENV["GOOGLE_ANALYTICS_SITE"] = "y"
         expect(analytics).to be false
       end
     end
 
-    context 'when the site env var is not set' do
-      it 'returns false' do
-        ENV['GOOGLE_ANALYTICS_KEY'] = 'x'
-        ENV['GOOGLE_ANALYTICS_SITE'] = ''
+    context "when the site env var is not set" do
+      it "returns false" do
+        ENV["GOOGLE_ANALYTICS_KEY"] = "x"
+        ENV["GOOGLE_ANALYTICS_SITE"] = ""
         expect(analytics).to be false
       end
     end
 
-    context 'when the both env vars are not set' do
-      it 'returns false' do
-        ENV['GOOGLE_ANALYTICS_KEY'] = ''
-        ENV['GOOGLE_ANALYTICS_SITE'] = ''
+    context "when the both env vars are not set" do
+      it "returns false" do
+        ENV["GOOGLE_ANALYTICS_KEY"] = ""
+        ENV["GOOGLE_ANALYTICS_SITE"] = ""
         expect(analytics).to be false
       end
     end
   end
 
-  describe '#google_analytics_key' do
+  describe "#google_analytics_key" do
     it 'returns the ENV["GOOGLE_ANALYTICS_KEY"] value' do
-      ENV['GOOGLE_ANALYTICS_KEY'] = SecureRandom.hex 10
-      expect(helper.google_analytics_key).to eq ENV.fetch('GOOGLE_ANALYTICS_KEY', nil)
+      ENV["GOOGLE_ANALYTICS_KEY"] = SecureRandom.hex 10
+      expect(helper.google_analytics_key).to eq ENV.fetch("GOOGLE_ANALYTICS_KEY", nil)
     end
   end
 
-  describe '#google_analytics_site' do
+  describe "#google_analytics_site" do
     it 'returns the ENV["GOOGLE_ANALYTICS_SITE"] value' do
-      ENV['GOOGLE_ANALYTICS_SITE'] = SecureRandom.hex 10
-      expect(helper.google_analytics_site).to eq ENV.fetch('GOOGLE_ANALYTICS_SITE', nil)
+      ENV["GOOGLE_ANALYTICS_SITE"] = SecureRandom.hex 10
+      expect(helper.google_analytics_site).to eq ENV.fetch("GOOGLE_ANALYTICS_SITE", nil)
     end
   end
 end
