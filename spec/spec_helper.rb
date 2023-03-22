@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'capybara/rspec'
+require "capybara/rspec"
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
@@ -11,7 +11,7 @@ RSpec.configure do |config|
   end
   # config.example_status_persistence_file_path = "spec/examples.txt"
   config.disable_monkey_patching!
-  config.default_formatter = 'doc' if config.files_to_run.one?
+  config.default_formatter = "doc" if config.files_to_run.one?
   # config.profile_examples = 10
   config.order = :random
   Kernel.srand config.seed

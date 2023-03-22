@@ -5,10 +5,9 @@ class Donations::HoleSponsorsController < ApplicationController
     @donation = Donation.new
   end
 
-  # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
   def create
     @donation = Donation.new(donation_params)
-    @donation.selection = 'hole_sponsor'
+    @donation.selection = "hole_sponsor"
 
     if @donation.save
       if @donation.paypal?
@@ -17,13 +16,12 @@ class Donations::HoleSponsorsController < ApplicationController
         DonationMailer.with(donation: @donation).thank_you.deliver_later
         DonationMailer.with(donation: @donation).inform_admin.deliver_later
         redirect_to successes_path,
-                    notice: "Your #{@donation.selection.tr('_', ' ')} has been noted!"
+          notice: "Your #{@donation.selection.tr("_", " ")} has been noted!"
       end
     else
       render :new
     end
   end
-  # rubocop:enable Metrics/MethodLength, Metrics/AbcSize
 
   private
 

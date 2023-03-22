@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class DonationMailer < ApplicationMailer
-  ADMIN_EMAIL = 'caring-site@nym.hush.com'
+  ADMIN_EMAIL = "caring-site@nym.hush.com"
 
   def thank_you
     @donation = params[:donation]
@@ -16,7 +16,7 @@ class DonationMailer < ApplicationMailer
   private
 
   def admin_email
-    return ENV['ADMIN_EMAIL'] if ENV['ADMIN_EMAIL'].present?
+    return ENV["ADMIN_EMAIL"] if ENV["ADMIN_EMAIL"].present?
 
     ADMIN_EMAIL
   end

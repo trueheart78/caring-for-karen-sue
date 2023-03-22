@@ -5,10 +5,9 @@ class Donations::DonationsController < ApplicationController
     @donation = Donation.new
   end
 
-  # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
   def create
     @donation = Donation.new(donation_params)
-    @donation.selection = 'donation'
+    @donation.selection = "donation"
 
     if @donation.save
       if @donation.paypal?
@@ -22,7 +21,6 @@ class Donations::DonationsController < ApplicationController
       render :new
     end
   end
-  # rubocop:enable Metrics/MethodLength, Metrics/AbcSize
 
   private
 

@@ -3,15 +3,15 @@
 class Charity::RightStep
   class << self
     def name
-      'Right Step'
+      "Right Step"
     end
 
     def url
-      'https://www.therightstepinc.org'
+      "https://www.therightstepinc.org"
     end
 
     def logo
-      'right-step.jpg'
+      "right-step.jpg"
     end
 
     def copy
