@@ -2,7 +2,7 @@
 
 module ApplicationHelper
   def current_charity
-    Charity::ShilohHouse
+    Charity::Local
   end
 
   def google_analytics?

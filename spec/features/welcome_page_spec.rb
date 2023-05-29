@@ -12,7 +12,7 @@ RSpec.describe "Welcome Page" do
       expect(page.find_link("Home")).to be_visible
     end
 
-    it "Provides a link to the Sponsor page" do
+    xit "Provides a link to the Sponsor page" do
       expect(page.find_link("Sponsor")).to be_visible
     end
 

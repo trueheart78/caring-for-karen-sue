@@ -1,47 +1,50 @@
 <section id="main" class="container">
-  <!--<header>
-    <h2>About</h2>
-    <p>A generic page for every non-generic situation.</p>
-  </header>-->
   <div class="box">
-    <!--    <span class="image featured"><img src="images/pic01.jpg" alt="" /></span>-->
     <h3>About Karen Sue</h3>
     <p>
-    In 2009, our mom, Karen Sue Danielson, was diagnosed with Stage
-    3B Inflammatory Breast Cancer (IBC). IBC is not detectable in
-    mammograms, so usually by the time it is diagnosed, as with
-    our mom, it has already spread. She fought long and hard, never
-    giving up faith, never giving up hope. We originally started
-    the golf tournament to support alternative treatments outside
-    of the country for our mother. Unfortunately, she lost her
-    battle with cancer in September 2011.
+      In 2009, our mom, Karen Sue Danielson, was diagnosed with Stage
+      3B Inflammatory Breast Cancer (IBC). IBC is not detectable in
+      mammograms, so usually by the time it is diagnosed, as with
+      our mom, it has already spread. She fought long and hard, never
+      giving up faith, never giving up hope. We originally started
+      the golf tournament to support alternative treatments outside
+      of the country for our mother. Unfortunately, she lost her
+      battle with cancer in September 2011.
     </p>
     <h3>Keeping a promise</h3>
     <p>
-    We made a promise to her that we would run the tournament no
-    matter what happened for as long as we could to support a cause
-    close to her heart. This is our eleventh year and we are hoping
-    that it’s our biggest.
+      We made a promise to her that we would run the tournament no
+      matter what happened for as long as we could to support a cause
+      close to her heart. This is our eleventh year and we are hoping
+      that it’s our biggest.
     </p>
     <p>
-    Mom was an unbelievably loving and caring woman. Always there
-    to lend a hand, flash a smile, say the right words, or just 
-    give you a warm hug. She always knew what to do and when to 
-    do it. Our parents were foster parents and our mom had a strong
-    passion to help kids less fortunate. We are very proud, and 
-    honored to have a partnership with the <%= current_charity.name %> in which
-    all the funds we raise go to.
+      Mom was an unbelievably loving and caring woman. Always there
+      to lend a hand, flash a smile, say the right words, or just
+      give you a warm hug. She always knew what to do and when to
+      do it. Our parents were foster parents and our mom had a strong
+      passion to help kids less fortunate.
     </p>
+
+    <% if current_charity.name == "local" %>
+      <p>
+        All proceeds will go to local non profits that deal with foster care, local foster families and kids.
+      </p>
+    <% else %>
+      <p>
+        We are very proud, and honored to have a partnership with the
+        <%= current_charity.name %> in which all the funds we raise go to.</p>
+      <p>
+        <%= link_to image_tag("charities/#{current_charity.logo}"), current_charity.url, target: '_blank' %>
+      </p>
+      <p>
+        <%= raw current_charity.copy %>
+      </p>
+      <h3>Thank you</h3>
+    <% end %>
     <p>
-    <%= link_to image_tag("charities/#{current_charity.logo}"), current_charity.url, target: '_blank' %>
-    </p>
-    <p>
-    <%= raw current_charity.copy %>
-    </p>
-    <h3>Thank you</h3>
-    <p>
-    Thank you for your support and for keeping our mom's legacy 
-    alive and strong!
+      Thank you for your support and for keeping our mom's legacy
+      alive and strong!
     </p>
   </div>
 </section>
