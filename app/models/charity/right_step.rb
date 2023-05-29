@@ -3,7 +3,11 @@
 class Charity::RightStep
   class << self
     def name
-      "Right Step"
+      "the Right Step"
+    end
+
+    def local?
+      false
     end
 
     def url

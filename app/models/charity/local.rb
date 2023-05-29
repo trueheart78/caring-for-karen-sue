@@ -3,7 +3,11 @@
 class Charity::Local
   class << self
     def name
-      "local"
+      "local nonprofits"
+    end
+
+    def local?
+      true
     end
 
     def url

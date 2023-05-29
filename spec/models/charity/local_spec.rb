@@ -7,7 +7,13 @@ RSpec.describe Charity::Local do
 
   describe ".name" do
     it 'is "local"' do
-      expect(charity.name).to eq "local"
+      expect(charity.name).to eq "local nonprofits"
+    end
+  end
+
+  describe ".local?" do
+    it "is true" do
+      expect(charity).to be_local
     end
   end
 

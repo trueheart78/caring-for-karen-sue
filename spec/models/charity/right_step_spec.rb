@@ -7,7 +7,13 @@ RSpec.describe Charity::RightStep do
 
   describe ".name" do
     it 'is "Shiloh House"' do
-      expect(charity.name).to eq "Right Step"
+      expect(charity.name).to eq "the Right Step"
+    end
+  end
+
+  describe ".local?" do
+    it "is false" do
+      expect(charity).not_to be_local
     end
   end
 
@@ -25,7 +31,7 @@ RSpec.describe Charity::RightStep do
 
   describe ".copy" do
     it "has expected content" do
-      expect(charity.copy).to match charity.name
+      expect(charity.copy).to match charity.name.titleize
       expect(charity.copy).to match '501 \(C\) \(3\)'
       expect(charity.copy).to match "Visit them online"
     end

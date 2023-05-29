@@ -3,7 +3,11 @@
 class Charity::ShilohHouse
   class << self
     def name
-      "Shiloh House"
+      "the Shiloh House"
+    end
+
+    def local?
+      false
     end
 
     def url

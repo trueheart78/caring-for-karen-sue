@@ -6,9 +6,13 @@
   <ul class="copyright">
     <li>&copy; <%= Site.title %>. All rights reserved.</li>
     <li>In honor of Karen Danielson</li>
-    <li>All proceeds go to the
-      <%= link_to current_charity.name, current_charity.url, target: '_blank' %>
-    </li>
+    <% if current_charity.local? %>
+      <li>All proceeds go to <%= current_charity.name %></li>
+    <% else %>
+      <li>All proceeds go to
+        <%= link_to current_charity.name, current_charity.url, target: '_blank' %>
+      </li>
+    <% end %>
     <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
   </ul>
 </footer>
