@@ -2,5 +2,5 @@
 
 require "simplecov"
 
-SimpleCov.minimum_coverage 89
+SimpleCov.minimum_coverage 93
 SimpleCov.start "rails" unless ENV["SKIP_COVERAGE"]
