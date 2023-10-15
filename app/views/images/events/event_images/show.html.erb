@@ -2,7 +2,12 @@
   <div class="box" align="center">
     <h3>2023 Event Picture #<%= @image.id %> - <%= link_to "Back", "#{images_events_2023_path}\##{@image.anchor_id}" %></h3>
     <p>
-      <img src="<%= @image.resized_url %>" alt="2023 Event - Image #<%= @image.id %>" />
+      <picture>
+        <source media="(max-width: 799px)" srcset="<%= @image.preview_url %>" />
+        <source media="(min-width: 800px)" srcset="<%= @image.resized_url %>" />
+        <img src="<%= @image.resized_url %>" alt="2023 Event - Image #<%= @image.id %>" />
+      </picture>
+
       <ul class="actions">
         <li><a href="<%= @image.original_url %>" class="button alt" target="_blank">Download Original</a></li>
       </ul>

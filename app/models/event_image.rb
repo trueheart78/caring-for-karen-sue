@@ -4,7 +4,13 @@ class EventImage
   EVENT_ID = "2023"
   IMAGE_RANGE = 1..173
   PARENT_DIR = "2023-event"
-  TYPE_DIRS = {thumb: "thumbs", original: "originals", resized: "resized"}
+  TYPE_DIRS = {
+    thumb: "thumbs",
+    original: "originals",
+    preview: "previews",
+    resized: "resized"
+  }
+
   TALL_IDS = [1, 2, 3, 4, 5, 6, 9, 10, 11, 12, 13, 14, 15, 18, 20, 21,
     22, 36, 37, 38, 42, 43, 44, 45, 57, 58, 59, 60, 61, 62,
     63, 64, 67, 68, 70, 71, 72, 75, 76, 77, 78, 79, 84, 86,
@@ -51,6 +57,12 @@ class EventImage
     return unless valid?
 
     url type: :original
+  end
+
+  def preview_url
+    return unless valid?
+
+    url type: :preview
   end
 
   def resized_url
