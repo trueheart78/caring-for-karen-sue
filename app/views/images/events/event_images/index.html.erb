@@ -1,0 +1,25 @@
+<section id="main" class="container">
+  <section class="box special">
+    <header class="major">
+      <h2>2023 Event Pictures</h2>
+    </header>
+  </section>
+  <%= render partial: "error", locals: { error_message: @error_message } if @error_message %>
+  <% if @images.any? %>
+    <% x = 0 %>
+    <% @images.each do |image| %>
+      <% if x % 3 == 0 %>
+        <div class="row">
+      <% end %>
+      <%= render partial: "image", locals: { image: image} %>
+      <% x += 1 %>
+      <% if x % 3 == 0 %>
+        </div>
+      <% end %>
+    <% end %>
+    <% if x % 3 != 0 %>
+      </div>
+    <% end %>
+  <% end %>
+</section>
+

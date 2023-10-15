@@ -7,8 +7,6 @@ class ApplicationController < ActionController::Base
 
   after_action :custom_response_headers
 
-  class SuckyError < StandardError; end
-
   def custom_response_headers
     response.set_header "Permissions-Policy", "geolocation=(self \"#{Site.url}\"), microphone=()"
   end

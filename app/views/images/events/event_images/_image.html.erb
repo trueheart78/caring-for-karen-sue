@@ -1,0 +1,6 @@
+<div class="4u 12u(narrower)">
+  <section class="box special">
+    <a id="<%= image.anchor_id %>"></a>
+    <%= link_to image_tag(image.thumb_url, loading: 'lazy', size: "#{image.thumb_width}x#{image.thumb_height}"), images_events_path(image.id) %>
+  </section>
+</div>
