@@ -31,6 +31,7 @@ RSpec.describe EventImage do
         {
           thumb: "thumbs",
           original: "originals",
+          preview: "previews",
           resized: "resized"
         }
       end
