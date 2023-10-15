@@ -1,0 +1,11 @@
+<section id="main" class="container">
+  <div class="box" align="center">
+    <h3>2023 Event Picture #<%= @image.id %> - <%= link_to "Back", "#{images_events_2023_path}\##{@image.anchor_id}" %></h3>
+    <p>
+      <img src="<%= @image.resized_url %>" alt="2023 Event - Image #<%= @image.id %>" />
+      <ul class="actions">
+        <li><a href="<%= @image.original_url %>" class="button alt" target="_blank">Download Original</a></li>
+      </ul>
+    </p>
+  </div>
+</section>

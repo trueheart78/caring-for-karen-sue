@@ -15,6 +15,15 @@ Rails.application.routes.draw do
   get "cancellations/index", to: "cancellations#index"
   get "cancellations", to: "cancellations#index"
   resources :donations, only: [:index]
+
+  # Static image pages for events
+  namespace :images do
+    namespace :events do
+      get "2023/", to: "event_images#index"
+      get "2023/:id", to: "event_images#show", constraints: {id: /\d+/}
+    end
+  end
+
   get "about", to: "about#index"
   get "sponsors", to: "sponsors#index"
   get "robots.:format", to: "robots#index"
