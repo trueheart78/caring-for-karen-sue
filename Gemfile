@@ -29,7 +29,7 @@ end
 
 group :development, :test do
   gem "capybara", "~> 3.38"
-  gem "dotenv-rails", "~> 2.8"
+  gem "dotenv"
   gem "factory_bot_rails"
   gem "pry", "~> 0.14.2"
   gem "rails-controller-testing"
