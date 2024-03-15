@@ -11,6 +11,12 @@ Rails.application.configure do
   # Do not eager load code on boot.
   config.eager_load = false
 
+  # Enable server timing
+  config.server_timing = true
+
+  # Highlight code that triggered database queries in logs.
+  config.active_record.verbose_query_logs = true
+
   # Show full error reports.
   config.consider_all_requests_local = true
 
