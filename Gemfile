@@ -5,6 +5,7 @@ source "https://rubygems.org"
 # Heroku needs this. Keep this in sync with .ruby-version and .circleci/config.yml
 ruby "~> 3.1.0"
 
+# gem 'any gem',git: 'any repo',branch: 'specific branch of that repo',ref: 'reference no.'
 gem "bootsnap"
 gem "coffee-rails", "~> 5.0"
 gem "font-awesome-rails", "~> 4.7"
@@ -12,11 +13,12 @@ gem "jquery-rails"
 gem "nokogiri", ">= 1.7.1"
 gem "oj"
 gem "puma"
-gem "rails", "~> 6.1.7"
+gem "rails", "~> 7.0.0"
 gem "rollbar", "~> 2.12"
 gem "sass-rails", "~> 6.0"
 gem "skylight"
-gem "sparkpost_rails"
+gem "sparkpost_rails", git: "https://github.com/sunny/sparkpost_rails/", branch: "allow-rails-seven"
+
 gem "sprockets", "< 4.0"
 gem "turbolinks"
 gem "uglifier", ">= 1.3.0"
