@@ -332,7 +332,6 @@ DEPENDENCIES
   skylight
   sparkpost_rails!
   spring
-  sprockets (< 4.0)
   sqlite3 (~> 1.6.1)
   standard
   turbolinks
