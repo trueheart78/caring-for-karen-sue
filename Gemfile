@@ -5,7 +5,7 @@ source "https://rubygems.org"
 # Heroku needs this. Keep this in sync with .ruby-version and .circleci/config.yml
 ruby "~> 3.1.0"
 
-# gem 'any gem',git: 'any repo',branch: 'specific branch of that repo',ref: 'reference no.'
+# gem "gem_name", git: "repo url", branch: "specific branch of said repo", ref: "reference hash"
 gem "bootsnap"
 gem "coffee-rails", "~> 5.0"
 gem "font-awesome-rails", "~> 4.7"
@@ -29,7 +29,7 @@ end
 
 group :development, :test do
   gem "capybara", "~> 3.38"
-  gem "dotenv"
+  gem "dotenv", require: "dotenv/load"
   gem "factory_bot_rails"
   gem "pry", "~> 0.14.2"
   gem "rails-controller-testing"
