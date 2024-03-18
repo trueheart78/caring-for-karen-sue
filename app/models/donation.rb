@@ -63,6 +63,8 @@ class Donation < ApplicationRecord
     return 2 if selection == "registration"
     return 3 if selection == "lunch"
     return 4 if selection == "hole_sponsor"
+
+    nil
   end
 
   def paypal_values(return_path)

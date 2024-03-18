@@ -1,6 +1,6 @@
 # Caring For Karen Sue [![Circle CI](https://circleci.com/gh/trueheart78/caring-for-karen-sue.svg?style=shield)](https://circleci.com/gh/trueheart78/caring-for-karen-sue) [![Ruby Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://github.com/testdouble/standard)
 
-Ruby 3.1 and Rails 6.1
+Ruby 3.1 and Rails 7.0
 
 ## Environment Variables
 
@@ -15,11 +15,11 @@ SKYLIGHT_AUTHENTICATION
 
 ## Dotenv Files
 
-The stock `.env` file includes the basics. You should create both an `.env.local` and an `.env.test` file, that include real values.
+The stock `.env` file includes the basics. You should create both an `.env.development` and an `.env.test` file, that include real values.
 
 ```sh
-cp .env .env.local
-vim .env.local
+cp .env .env.development
+vim .env.development
 ```
 
 ## Running Specs

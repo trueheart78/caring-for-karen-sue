@@ -5,19 +5,20 @@ source "https://rubygems.org"
 # Heroku needs this. Keep this in sync with .ruby-version and .circleci/config.yml
 ruby "~> 3.1.0"
 
+# gem "gem_name", git: "repo url", branch: "specific branch of said repo", ref: "reference hash"
 gem "bootsnap"
 gem "coffee-rails", "~> 5.0"
 gem "font-awesome-rails", "~> 4.7"
 gem "jquery-rails"
-gem "nokogiri", ">= 1.7.1"
+gem "nokogiri"
 gem "oj"
 gem "puma"
-gem "rails", "~> 6.1.7"
-gem "rollbar", "~> 2.12"
+gem "rails", "~> 7.0.0"
+gem "rollbar", "~> 3.5"
 gem "sass-rails", "~> 6.0"
 gem "skylight"
-gem "sparkpost_rails"
-gem "sprockets", "< 4.0"
+gem "sparkpost_rails", git: "https://github.com/sunny/sparkpost_rails/", branch: "allow-rails-seven"
+
 gem "turbolinks"
 gem "uglifier", ">= 1.3.0"
 
@@ -28,7 +29,7 @@ end
 
 group :development, :test do
   gem "capybara", "~> 3.38"
-  gem "dotenv-rails", "~> 2.8"
+  gem "dotenv", require: "dotenv/load"
   gem "factory_bot_rails"
   gem "pry", "~> 0.14.2"
   gem "rails-controller-testing"
@@ -46,5 +47,5 @@ group :test do
 end
 
 group :production do
-  gem "pg", "~> 1.4.5"
+  gem "pg", "~> 1.5.6"
 end
