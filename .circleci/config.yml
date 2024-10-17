@@ -4,7 +4,7 @@ jobs:
   build:
     working_directory: ~/CaringForKarenSue-Rails
     docker:
-      - image: cimg/ruby:3.1
+      - image: cimg/ruby:3.1.6
         environment:
           RAILS_ENV: test
     steps:
