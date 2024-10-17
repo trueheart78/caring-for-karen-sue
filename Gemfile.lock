@@ -213,7 +213,6 @@ GEM
     regexp_parser (2.9.0)
     rexml (3.3.6)
       strscan
-    rollbar (3.5.2)
     rspec-core (3.13.0)
       rspec-support (~> 3.13.0)
     rspec-expectations (3.13.0)
@@ -337,7 +336,6 @@ DEPENDENCIES
   rails (~> 7.0.0)
   rails-controller-testing
   rails_real_favicon
-  rollbar (~> 3.5)
   rspec-rails (~> 6.0)
   rubocop-rails
   sass-rails (~> 6.0)
