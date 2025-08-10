@@ -12,6 +12,8 @@ class Donations::HoleSponsorsController < ApplicationController
     if @donation.save
       if @donation.paypal?
         redirect_to @donation.paypal_url(successes_path), allow_other_host: true
+      elsif @donation.venmo?
+        redirect_to @donation.venmo_url, allow_other_host: true
       elsif @donation.paying_by_check?
         DonationMailer.with(donation: @donation).thank_you.deliver_later
         DonationMailer.with(donation: @donation).inform_admin.deliver_later

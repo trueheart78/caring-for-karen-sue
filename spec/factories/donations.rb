@@ -10,19 +10,20 @@ FactoryBot.define do
     quantity { 1 }
 
     factory :registration do
-      amount { 500 }
+      amount { 600 }
       quantity { 5 }
       selection { "registration" }
     end
 
     factory :lunch do
       amount { 150 }
-      quantity { 6 }
+      quantity { 5 }
       selection { "lunch" }
     end
 
     factory :hole_sponsor do
-      amount { 1_000 }
+      amount { 1_500 }
+      disabled { false }
       quantity { 1 }
       selection { "hole_sponsor" }
     end

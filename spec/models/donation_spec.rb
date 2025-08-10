@@ -73,6 +73,32 @@ RSpec.describe Donation do
     end
   end
 
+  describe "#selected_item" do
+    subject(:selected_item) { build(:donation, selection: selection, quantity: quantity).selected_item }
+
+    context "when lunch" do
+      let(:selection) { "lunch" }
+      let(:quantity) { 3 }
+      let(:expected_value) { "Lunch (quantity: 3)" }
+
+      it "includes the quantity" do
+        expect(selected_item).to eq expected_value
+      end
+    end
+
+    context "when registration" do
+      let(:selection) { "registration" }
+      let(:quantity) { 3 }
+      let(:expected_value) { "Registration (quantity: 3)" }
+
+      it "includes the quantity" do
+        expect(selected_item).to eq expected_value
+      end
+    end
+
+    # donation, hole_sponsor
+  end
+
   describe "amount validation" do
     subject(:donation) { build :donation, amount: amount }
 
@@ -104,7 +130,7 @@ RSpec.describe Donation do
   describe "payment_type validation" do
     subject(:donation) { build :donation, payment_type: payment_type }
 
-    %w[check paypal].each do |payment|
+    %w[check paypal venmo].each do |payment|
       context "when set as #{payment}" do
         let(:payment_type) { payment }
 
@@ -115,7 +141,7 @@ RSpec.describe Donation do
     end
 
     context "when anything else" do
-      let(:payment_type) { "venmo" }
+      let(:payment_type) { "bank_account" }
 
       it "is not valid" do
         expect(donation).not_to be_valid
@@ -148,7 +174,8 @@ RSpec.describe Donation do
       [
         ["-- Please Select --", "none"],
         ["Check/Money Order", "check"],
-        ["Paypal/Credit Card", "paypal"]
+        ["Paypal/Credit Card", "paypal"],
+        ["Venmo", "venmo"]
       ]
     end
 
@@ -217,13 +244,48 @@ RSpec.describe Donation do
     end
   end
 
+  describe "#venmo?" do
+    subject(:donation) { create :donation, payment_type: payment_type }
+
+    context "when the payment type is venmo" do
+      let(:payment_type) { "venmo" }
+
+      it "returns true" do
+        expect(donation).to be_venmo
+      end
+    end
+
+    context "when the payment type is not venmo" do
+      let(:payment_type) { "check" }
+
+      it "returns false" do
+        expect(donation).not_to be_venmo
+      end
+    end
+  end
+
   describe "#paypal_url" do
     subject(:url) { create(:donation, quantity: qty).paypal_url return_path }
 
     let(:qty) { 5 }
     let(:return_path) { "xyz" }
     let(:expected_url) do
-      "https://www.sandbox.paypal.com/cgi-bin/webscr?amount=100&business=&cmd=_xclick&invoice=1&item_name=Donation&item_number=1&notify_url=http%3A%2F%2Flocalhost%2Fhook&quantity=5&return=http%3A%2F%2Flocalhost%2Fxyz&upload=1"
+      "https://www.sandbox.paypal.com/cgi-bin/webscr?amount=100&business=Test%40test.com&cmd=_xclick&invoice=1&item_name=Donation&item_number=1&notify_url=http%3A%2F%2Flocalhost%2Fhook&quantity=5&return=http%3A%2F%2Flocalhost%2Fxyz&upload=1"
+    end
+
+    it "returns the expected path" do
+      expect(url).to eq expected_url
+    end
+  end
+
+  describe "#venmo_url" do
+    subject(:url) { create(:donation, selection: selection, quantity: qty, amount: amount).venmo_url }
+
+    let(:qty) { 5 }
+    let(:amount) { 125 }
+    let(:selection) { "registration" }
+    let(:expected_url) do
+      "https://account.venmo.com/pay?amount=#{amount * qty}&audience=private&note=Registration+%28quantity%3A+#{qty}%29&recipients=#{ENV.fetch("VENMO_USERNAME", nil)}&txn=charge"
     end
 
     it "returns the expected path" do

@@ -8,18 +8,25 @@ class HoleSponsor
       all[value.to_i]
     end
 
+    def first_amount
+      all.keys.first
+    end
+
     def all
       {
-        200 => {name: "Hole",
+        300 => {name: "Hole",
+                disabled: false,
                 description: "1 Hole Sponsor"},
-        500 => {name: "Birdie",
+        600 => {name: "Birdie",
+                disabled: false,
                 description: "1 Foursome and 1 Hole Sponsor"},
-        700 => {name: "Eagle",
+        800 => {name: "Eagle",
+                disabled: false,
                 description: "1 Foursome and 2 Hole Sponsors"},
-        1_000 => {name: "Hole in One",
-                  description: "1 Foursome, 2 Hole Sponsors, Logo on Website and Banner, KOOZIES with your logo for each golf player"},
-        1_150 => {name: "Hole in One Upgrade",
-                  description: "1 Foursome, 2 Hole Sponsors, Logo on Website and Banner, KOOZIES with your logo for each golf player AND a sleeve of golf balls with your logo on it for each golf player"}
+        1_500 => {name: "Hole in One",
+                  disabled: true,
+                  display_cost: "1,500+",
+                  description: "<b><a href='mailto:#{ENV["ADMIN_EMAIL"]}?subject=Hole%20in%20One%20Sponsor%20Request'>Email Dan to Purchase</a></b>"}
       }
     end
   end

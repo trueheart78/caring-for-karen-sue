@@ -20,13 +20,13 @@ RSpec.describe Lunch do
 
     context "when passed a missing value" do
       it "returns nil" do
-        expect(lunch.find(value: 30)).to be_nil
+        expect(lunch.find(value: 31)).to be_nil
       end
     end
 
     context "when passed an existing value" do
       it "returns the expected value" do
-        expect(lunch.find(value: 250)).to eq "10 lunches"
+        expect(lunch.find(value: 300)).to eq "10 lunches"
       end
     end
   end
@@ -38,8 +38,8 @@ RSpec.describe Lunch do
   end
 
   describe ".cost" do
-    it "returns 25" do
-      expect(lunch.cost).to eq 25
+    it "returns 30" do
+      expect(lunch.cost).to eq 30
     end
   end
 

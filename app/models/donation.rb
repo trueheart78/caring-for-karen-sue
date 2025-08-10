@@ -2,7 +2,6 @@
 
 class Donation < ApplicationRecord
   validates :name, length: {minimum: 2, maximum: 50, message: "Name is invalid"}
-  # https://api.rubyonrails.org/v5.2/classes/ActiveModel/Validations/ClassMethods.html#method-i-validates
   validates :email, format: {with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create,
                              message: "Email address is invalid"}
   validates :selection, inclusion: {in: %w[donation registration lunch hole_sponsor],
@@ -10,7 +9,7 @@ class Donation < ApplicationRecord
   validates :amount, numericality: {only_integer: true,
                                     greater_than_or_equal_to: 1,
                                     message: "Amount must be a positive number"}
-  validates :payment_type, inclusion: {in: %w[check paypal],
+  validates :payment_type, inclusion: {in: %w[check paypal venmo],
                                        message: "Payment type must be selected"}
   validates :quantity, numericality: {only_integer: true,
                                       greater_than_or_equal_to: 1,
@@ -32,9 +31,24 @@ class Donation < ApplicationRecord
     payment_type == "check"
   end
 
-  # TODO: change this to reflect the quantity that they selected
+  def venmo?
+    payment_type == "venmo"
+  end
+
   def selected_item
-    selection.titleize
+    if selection == "registration" || selection == "lunch"
+      "#{selection.titleize} (quantity: #{quantity})"
+    elsif selection == "hole_sponsor"
+      HoleSponsor.find(value: amount)&.fetch(:name)&.+ " (Hole Sponsor)"
+    else
+      selection.titleize
+    end
+  end
+
+  def total_amount
+    return amount unless %w[registration lunch].include?(selection)
+
+    amount * quantity
   end
 
   def paypal_url(return_path)
@@ -42,11 +56,16 @@ class Donation < ApplicationRecord
       "cgi-bin/webscr?#{paypal_values(return_path).to_query}").to_s
   end
 
+  def venmo_url
+    URI.join("https://account.venmo.com", "pay?#{venmo_values.to_query}").to_s
+  end
+
   def self.payment_types
     [
       ["-- Please Select --", "none"],
       ["Check/Money Order", "check"],
-      ["Paypal/Credit Card", "paypal"]
+      ["Paypal/Credit Card", "paypal"],
+      ["Venmo", "venmo"]
     ]
   end
 
@@ -79,6 +98,17 @@ class Donation < ApplicationRecord
       item_number: item_num,
       quantity: quantity,
       notify_url: "#{Rails.application.secrets.app_host}/hook"
+    }
+  end
+
+  # audience=private&amount=125&note=Donation%20for%20event&recipients=%2CCaringforkarensue&txn=charge
+  def venmo_values
+    {
+      audience: :private,
+      amount: total_amount,
+      note: selected_item,
+      recipients: ENV.fetch("VENMO_USERNAME", nil),
+      txn: :charge
     }
   end
 end

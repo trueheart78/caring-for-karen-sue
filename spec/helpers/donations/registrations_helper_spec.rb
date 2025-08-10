@@ -14,18 +14,19 @@ require "rails_helper"
 # end
 RSpec.describe Donations::RegistrationsHelper do
   describe "#registration_options" do
+    let(:cost) { Registration.cost }
     let(:expected_array) do
       [
-        ["1 player for $100", 100],
-        ["2 players for $200", 200],
-        ["3 players for $300", 300],
-        ["4 players for $400", 400],
-        ["5 players for $500", 500],
-        ["6 players for $600", 600],
-        ["7 players for $700", 700],
-        ["8 players for $800", 800],
-        ["9 players for $900", 900],
-        ["10 players for $1,000", 1_000]
+        ["1 player for $#{cost}", cost],
+        ["2 players for $#{number_with_delimiter(cost * 2, delimiter: ",")}", cost * 2],
+        ["3 players for $#{number_with_delimiter(cost * 3, delimiter: ",")}", cost * 3],
+        ["4 players for $#{number_with_delimiter(cost * 4, delimiter: ",")}", cost * 4],
+        ["5 players for $#{number_with_delimiter(cost * 5, delimiter: ",")}", cost * 5],
+        ["6 players for $#{number_with_delimiter(cost * 6, delimiter: ",")}", cost * 6],
+        ["7 players for $#{number_with_delimiter(cost * 7, delimiter: ",")}", cost * 7],
+        ["8 players for $#{number_with_delimiter(cost * 8, delimiter: ",")}", cost * 8],
+        ["9 players for $#{number_with_delimiter(cost * 9, delimiter: ",")}", cost * 9],
+        ["10 players for $#{number_with_delimiter(cost * 10, delimiter: ",")}", cost * 10]
       ]
     end
 

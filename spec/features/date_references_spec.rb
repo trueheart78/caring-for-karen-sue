@@ -12,6 +12,6 @@ RSpec.describe "Dates" do
     visit root_path
     banner = page.find_by_id "banner"
     expect(banner).to be_visible
-    expect(banner.text).to include("12th")
+    expect(banner.text).to include("13th")
   end
 end

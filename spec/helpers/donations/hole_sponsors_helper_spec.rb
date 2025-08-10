@@ -2,16 +2,26 @@
 
 require "rails_helper"
 
-# Specs in this file have access to a helper object that includes
-# the Donations::HoleSponsorsHelper. For example:
-#
-# describe Donations::HoleSponsorsHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       expect(helper.concat_strings("this","that")).to eq("this that")
-#     end
-#   end
-# end
 RSpec.describe Donations::HoleSponsorsHelper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "#selected?" do
+    subject(:selected) { helper.selected?(amount, donation_amount) }
+
+    context "when the amount is the first HoleSponsor cost" do
+      let(:amount) { HoleSponsor.first_amount }
+
+      context "when the donation_amount is zero" do
+        let(:donation_amount) { 0 }
+
+        it { is_expected.to eq true }
+      end
+
+      context "when the donation_amount is not zero" do
+        let(:donation_amount) { HoleSponsor.all.keys.sample }
+
+        it { is_expected.to eq false }
+      end
+    end
+  end
+  describe "#label_content" do
+  end
 end

@@ -18,7 +18,7 @@ class Lunch
     end
 
     def cost
-      25
+      30
     end
 
     def qty_from_total(total)

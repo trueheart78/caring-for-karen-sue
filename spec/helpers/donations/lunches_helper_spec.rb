@@ -14,18 +14,19 @@ require "rails_helper"
 # end
 RSpec.describe Donations::LunchesHelper do
   describe "#lunch_options" do
+    let(:cost) { Lunch.cost }
     let(:expected_array) do
       [
-        ["1 lunch for $25", 25],
-        ["2 lunches for $50", 50],
-        ["3 lunches for $75", 75],
-        ["4 lunches for $100", 100],
-        ["5 lunches for $125", 125],
-        ["6 lunches for $150", 150],
-        ["7 lunches for $175", 175],
-        ["8 lunches for $200", 200],
-        ["9 lunches for $225", 225],
-        ["10 lunches for $250", 250]
+        ["1 lunch for $#{cost}", cost],
+        ["2 lunches for $#{cost * 2}", cost * 2],
+        ["3 lunches for $#{cost * 3}", cost * 3],
+        ["4 lunches for $#{cost * 4}", cost * 4],
+        ["5 lunches for $#{cost * 5}", cost * 5],
+        ["6 lunches for $#{cost * 6}", cost * 6],
+        ["7 lunches for $#{cost * 7}", cost * 7],
+        ["8 lunches for $#{cost * 8}", cost * 8],
+        ["9 lunches for $#{cost * 9}", cost * 9],
+        ["10 lunches for $#{cost * 10}", cost * 10]
       ]
     end
 

@@ -14,8 +14,12 @@
   </div>
   <% HoleSponsor.all.each do |amount, details| %>
     <div class="field">
-      <%= f.radio_button :amount, amount, checked: ((amount == 200 && @donation.amount == 0) || (@donation.amount == amount)) %>
-      <%= f.label "amount_#{amount}", "#{details[:name]} for $#{number_with_delimiter(amount, delimiter: ',')} -- #{details[:description]}" %>
+      <%= f.radio_button :amount,
+        amount,
+        checked: selected?(amount, @donation.amount),
+        disabled: details[:disabled] %>
+        <%= f.label "amount_#{amount}",
+          label_content(amount, details).html_safe %>
     </div>
   <% end %>
 
