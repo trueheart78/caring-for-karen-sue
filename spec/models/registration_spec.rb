@@ -20,13 +20,13 @@ RSpec.describe Registration do
 
     context "when passed a missing value" do
       it "returns nil" do
-        expect(registration.find(value: 250)).to be_nil
+        expect(registration.find(value: 303)).to be_nil
       end
     end
 
     context "when passed an existing value" do
       it "returns the expected value" do
-        expect(registration.find(value: 1_000)).to eq "10 players"
+        expect(registration.find(value: 1_250)).to eq "10 players"
       end
     end
   end
@@ -38,8 +38,8 @@ RSpec.describe Registration do
   end
 
   describe ".cost" do
-    it "returns 100" do
-      expect(registration.cost).to eq 100
+    it "returns 125" do
+      expect(registration.cost).to eq 125
     end
   end
 

@@ -18,7 +18,7 @@ class Registration
     end
 
     def cost
-      100
+      125
     end
 
     def qty_from_total(total)

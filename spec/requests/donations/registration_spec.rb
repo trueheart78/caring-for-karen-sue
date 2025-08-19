@@ -11,7 +11,7 @@ RSpec.describe "Player Registrations" do
         {
           name: SecureRandom.hex(5),
           email: "valid@email.com",
-          amount: 100,
+          amount: Registration.cost,
           payment_type: "check"
         }
       end

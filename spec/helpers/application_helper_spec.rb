@@ -15,7 +15,7 @@ require "rails_helper"
 RSpec.describe ApplicationHelper do
   describe "#current_charity" do
     it "is set to the expected class" do
-      expect(helper.current_charity).to be Charity::Local
+      expect(helper.current_charity).to be Charity::HopeAndHome
     end
   end
 
