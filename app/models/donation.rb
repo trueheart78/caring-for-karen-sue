@@ -64,8 +64,8 @@ class Donation < ApplicationRecord
     [
       ["-- Please Select --", "none"],
       ["Check/Money Order", "check"],
-      ["Paypal/Credit Card", "paypal"],
-      ["Venmo", "venmo"]
+      ["Paypal/Credit Card", "paypal"]
+      # ["Venmo", "venmo"]
     ]
   end
 

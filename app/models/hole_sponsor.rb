@@ -26,7 +26,7 @@ class HoleSponsor
         1_500 => {name: "Hole in One",
                   disabled: true,
                   display_cost: "1,500+",
-                  description: "<b><a href='mailto:#{ENV["ADMIN_EMAIL"]}?subject=Hole%20in%20One%20Sponsor%20Request'>Email Dan to Purchase</a></b>"}
+                  description: "<b><a href='mailto:#{ENV["ADMIN_EMAIL"]}?subject=Hole%20in%20One%20Sponsor%20Request'>Email Dave to Purchase</a></b>"}
       }
     end
   end
