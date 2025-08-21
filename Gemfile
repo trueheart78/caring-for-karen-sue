@@ -18,7 +18,6 @@ gem "rails", "~> 7.0.0"
 gem "rack-attack", "~> 6.0"
 gem "sass-rails", "~> 6.0"
 gem "skylight"
-gem "sparkpost_rails", git: "https://github.com/sunny/sparkpost_rails/", branch: "allow-rails-seven"
 
 gem "turbolinks"
 gem "uglifier", ">= 1.3.0"
