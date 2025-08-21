@@ -44,8 +44,8 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
-  # Deliver email via SparkPostadded
-  config.action_mailer.delivery_method = :sparkpost
+  # Deliver email via Resend
+  config.action_mailer.delivery_method = :resend
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
