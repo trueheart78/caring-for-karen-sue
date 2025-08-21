@@ -50,3 +50,5 @@ end
 group :production do
   gem "pg", "~> 1.5.6"
 end
+
+gem "resend", "~> 0.24.0"
