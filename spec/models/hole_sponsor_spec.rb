@@ -27,7 +27,7 @@ RSpec.describe HoleSponsor do
     context "when passed an existing value" do
       it "returns the expected value" do
         expected = {name: "Birdie", description: "1 Foursome and 1 Hole Sponsor", disabled: false}
-        expect(hole_sponsor.find(value: 600)).to match expected
+        expect(hole_sponsor.find(value: 650)).to match expected
       end
     end
   end
