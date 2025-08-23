@@ -17,7 +17,7 @@ class HoleSponsor
         300 => {name: "Hole",
                 disabled: false,
                 description: "1 Hole Sponsor"},
-        600 => {name: "Birdie",
+        650 => {name: "Birdie",
                 disabled: false,
                 description: "1 Foursome and 1 Hole Sponsor"},
         800 => {name: "Eagle",
