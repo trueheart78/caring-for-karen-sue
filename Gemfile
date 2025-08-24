@@ -33,7 +33,7 @@ group :development, :test do
   gem "factory_bot_rails"
   gem "pry", "~> 0.14.2"
   gem "rails-controller-testing"
-  gem "rspec-rails", "~> 6.0"
+  gem "rspec-rails", "~> 7.0"
   gem "spring"
   gem "sqlite3", "~> 1.6.1"
 
