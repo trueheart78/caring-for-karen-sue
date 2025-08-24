@@ -52,7 +52,7 @@ class Donation < ApplicationRecord
   end
 
   def paypal_url(return_path)
-    URI.join(Rails.application.secrets.paypal_host,
+    URI.join(ENV.fetch("PAYPAL_HOST", nil),
       "cgi-bin/webscr?#{paypal_values(return_path).to_query}").to_s
   end
 
@@ -91,13 +91,13 @@ class Donation < ApplicationRecord
       business: ENV.fetch("PAYPAL_MERCHANT_EMAIL", nil),
       cmd: "_xclick",
       upload: 1,
-      return: "#{Rails.application.secrets.app_host}/#{return_path}",
+      return: "#{ENV.fetch("WEBSITE_URL", nil)}/#{return_path}",
       invoice: id,
       amount: amount,
       item_name: selected_item,
       item_number: item_num,
       quantity: quantity,
-      notify_url: "#{Rails.application.secrets.app_host}/hook"
+      notify_url: "#{ENV.fetch("WEBSITE_URL", nil)}/hook"
     }
   end
 
