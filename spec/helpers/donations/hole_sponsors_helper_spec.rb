@@ -16,7 +16,7 @@ RSpec.describe Donations::HoleSponsorsHelper do
       end
 
       context "when the donation_amount is not zero" do
-        let(:donation_amount) { HoleSponsor.all.keys.sample }
+        let(:donation_amount) { 1 }
 
         it { is_expected.to eq false }
       end

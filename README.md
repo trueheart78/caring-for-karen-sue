@@ -1,6 +1,6 @@
 # Caring For Karen Sue [![Circle CI](https://circleci.com/gh/trueheart78/caring-for-karen-sue.svg?style=shield)](https://circleci.com/gh/trueheart78/caring-for-karen-sue) [![Ruby Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://github.com/testdouble/standard)
 
-Ruby 3.1 and Rails 7.0
+Ruby 3.3 and Rails 8.0
 
 ## Environment Variables
 
@@ -11,12 +11,15 @@ ADMIN_EMAIL
 RESEND_API_KEY
 SKYLIGHT_AUTHENTICATION
 PAYPAL_MERCHANT_EMAIL
+PAYPAL_HOST
 VENMO_USERNAME
+WEBSITE_URL
+WEBSITE_DOMAIN
 ```
 
 ## Dotenv Files
 
-The stock `.env` file includes the basics. You should create both an `.env.development` and an `.env.test` file, that include real values.
+The stock `.env` file includes the basics. You should create both an `.env.development` and and update the`.env.test` file (if needed), that include real values.
 
 ```sh
 cp .env .env.development
@@ -36,7 +39,7 @@ bundle exec rspec
 First, boot the server.
 
 ```sh
-bundle exec rails s
+bin/dev
 ```
 
 Then head to [http://localhost:3000/rails/mailers][mailers].
