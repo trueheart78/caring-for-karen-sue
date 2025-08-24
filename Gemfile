@@ -3,7 +3,7 @@
 source "https://rubygems.org"
 
 # Heroku needs this. Keep this in sync with .ruby-version and .circleci/config.yml
-ruby "~> 3.1.6"
+ruby "~> 3.3.9"
 
 # gem "gem_name", git: "repo url", branch: "specific branch of said repo", ref: "reference hash"
 gem "bootsnap"
