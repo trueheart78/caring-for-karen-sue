@@ -35,7 +35,7 @@ group :development, :test do
   gem "rails-controller-testing"
   gem "rspec-rails", "~> 7.0"
   gem "spring"
-  gem "sqlite3", "~> 1.6.1"
+  gem "sqlite3", "~> 2.1.0"
 
   # Linter-related
   gem "standard", require: false
