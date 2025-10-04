@@ -2,8 +2,7 @@
 
 source "https://rubygems.org"
 
-# Heroku needs this. Keep this in sync with .ruby-version and .circleci/config.yml
-ruby "~> 3.1.6"
+ruby file: ".ruby-version"
 
 # gem "gem_name", git: "repo url", branch: "specific branch of said repo", ref: "reference hash"
 gem "bootsnap"
@@ -14,7 +13,11 @@ gem "logger"
 gem "nokogiri"
 gem "oj"
 gem "puma"
-gem "rails", "~> 7.0.0"
+gem "rack", "< 3.0"
+gem "rack-session", "< 2.0"
+gem "rackup", "< 2.0"
+gem "sprockets", "< 4.0"
+gem "rails", "~> 8.0.0"
 gem "rack-attack", "~> 6.0"
 gem "sass-rails", "~> 6.0"
 gem "skylight"
@@ -33,9 +36,9 @@ group :development, :test do
   gem "factory_bot_rails"
   gem "pry", "~> 0.14.2"
   gem "rails-controller-testing"
-  gem "rspec-rails", "~> 6.0"
+  gem "rspec-rails", "~> 7.0"
   gem "spring"
-  gem "sqlite3", "~> 1.6.1"
+  gem "sqlite3", "~> 2.1.0"
 
   # Linter-related
   gem "standard", require: false

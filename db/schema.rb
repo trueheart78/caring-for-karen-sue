@@ -10,21 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[6.1].define(version: 2020_06_10_181331) do
-
+ActiveRecord::Schema[7.1].define(version: 2025_08_24_144145) do
   create_table "donations", force: :cascade do |t|
     t.string "email", null: false
     t.string "name", null: false
     t.string "selection", default: "donation", null: false
     t.string "payment_type", null: false
     t.integer "amount", default: 0, null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
     t.integer "quantity", default: 1
     t.text "notification_params"
     t.string "status", default: "Incomplete"
     t.string "transaction_id"
-    t.datetime "purchased_at"
+    t.datetime "purchased_at", precision: nil
   end
 
   create_table "sponsors", force: :cascade do |t|
@@ -33,8 +32,8 @@ ActiveRecord::Schema[6.1].define(version: 2020_06_10_181331) do
     t.string "url", null: false
     t.string "image", null: false
     t.boolean "active", default: true, null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
   end
 
 end
