@@ -19,7 +19,6 @@ gem "rack-session", "< 2.0"
 gem "rackup", "< 2.0"
 gem "rails", "~> 8.0.0"
 gem "sass-rails", "~> 6.0"
-gem "skylight"
 gem "sprockets", "< 4.0"
 
 gem "turbolinks"
