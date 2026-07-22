@@ -21,8 +21,8 @@ gem "rails", "~> 8.0.0"
 gem "sass-rails", "~> 6.0"
 gem "sprockets", "< 4.0"
 
+gem "terser"
 gem "turbolinks"
-gem "uglifier", ">= 1.3.0"
 
 group :development do
   gem "rails_real_favicon"
