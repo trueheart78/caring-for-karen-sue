@@ -14,7 +14,7 @@ Rails.application.configure do
   config.action_controller.perform_caching = true
 
   # Compress JS using a preprocessor.
-  config.assets.js_compressor = Uglifier.new(harmony: true)
+  config.assets.js_compressor = :terser
   config.assets.digest = true
 
   # Do not fall back to assets pipeline if a precompiled asset is missed.
