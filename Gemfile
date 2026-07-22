@@ -10,17 +10,17 @@ gem "coffee-rails", "~> 5.0"
 gem "font-awesome-rails", "~> 4.7"
 gem "jquery-rails"
 gem "logger"
-gem "nokogiri"
+gem "nokogiri", "1.18.9"
 gem "oj"
 gem "puma"
 gem "rack", "< 3.0"
+gem "rack-attack", "~> 6.0"
 gem "rack-session", "< 2.0"
 gem "rackup", "< 2.0"
-gem "sprockets", "< 4.0"
 gem "rails", "~> 8.0.0"
-gem "rack-attack", "~> 6.0"
 gem "sass-rails", "~> 6.0"
 gem "skylight"
+gem "sprockets", "< 4.0"
 
 gem "turbolinks"
 gem "uglifier", ">= 1.3.0"
@@ -41,8 +41,8 @@ group :development, :test do
   gem "sqlite3", "~> 2.1.0"
 
   # Linter-related
-  gem "standard", require: false
   gem "rubocop-rails", require: false
+  gem "standard", require: false
 end
 
 group :test do
@@ -53,4 +53,4 @@ group :production do
   gem "pg", "~> 1.5.6"
 end
 
-gem "resend", "~> 0.24.0"
+gem "resend", "~> 1.6.0"

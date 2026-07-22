@@ -14,7 +14,7 @@ class Event
     end
 
     def date
-      "Saturday, September 20th, 2025"
+      "Saturday, September 26th, 2026"
     end
 
     def time
@@ -22,11 +22,11 @@ class Event
     end
 
     def check_deadline
-      "Wednesday, September 9th, 2025"
+      "Wednesday, September 16th, 2026"
     end
 
     def iteration
-      "13th"
+      "14th"
     end
 
     def google_maps_url
