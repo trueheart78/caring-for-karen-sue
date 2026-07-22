@@ -19,7 +19,7 @@ RSpec.describe Event do
   end
 
   it "has the expected date" do
-    expect(event.date).to eq "Saturday, September 20th, 2025"
+    expect(event.date).to eq "Saturday, September 26th, 2026"
   end
 
   it "has the expected time" do
@@ -27,11 +27,11 @@ RSpec.describe Event do
   end
 
   it "has the expected check deadline" do
-    expect(event.check_deadline).to eq "Wednesday, September 9th, 2025"
+    expect(event.check_deadline).to eq "Wednesday, September 16th, 2026"
   end
 
   it "has the expected iteration" do
-    expect(event.iteration).to eq "13th"
+    expect(event.iteration).to eq "14th"
   end
 
   it "has the expected google maps url" do
